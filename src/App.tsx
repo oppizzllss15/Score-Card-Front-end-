@@ -11,7 +11,7 @@ import { Reset } from './pages/Reset_password/Reset';
 function App() {
   return (
      <div className="App">
-       <SignupButton name="Signup" />
+      < Change />
      </div>
   );
 }
