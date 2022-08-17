@@ -17,14 +17,20 @@ export const sendResetLink = async (email: string) => {
   }
 };
 
-export const resetAccountPassword = async (id: string, ticket: string) => {
+export const resetAccountPassword = async (
+  id: string,
+  ticket: string,
+  newPassword: string,
+  confirmPassword: string
+) => {
   try {
     const resp = await fetch(`${url}/users/reset/password/${id}/${ticket}`, {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
+      body: JSON.stringify({ newPassword, confirmPassword }),
     });
     const res = await resp.json();
     return res;

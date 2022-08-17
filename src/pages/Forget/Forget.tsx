@@ -2,10 +2,13 @@ import { useState } from "react";
 import "./Forget.css";
 import EmailReset from "../../components/Reset-email.component";
 import { sendResetLink } from "../../utils/api"
+import Modal from "../../components/Message-modal.component"
 
 
 export const Forget = () => {
   const [ resp, setResp ] = useState("")
+  const [modalOpen, setModalOpen] = useState(false);
+
 
   const handleResetPass = async (email: string) => {
     const res = await sendResetLink(email)
@@ -28,7 +31,8 @@ export const Forget = () => {
           <p className="please">
             Send a Link to your email to reset your password
           </p>
-          <EmailReset handleResetPass={handleResetPass} />
+          <EmailReset handleResetPass={handleResetPass} setOpenModal={setModalOpen}/>
+          {modalOpen && <Modal setOpenModal={setModalOpen} resp={resp}/>}
         </div>
 
         <div className="second">

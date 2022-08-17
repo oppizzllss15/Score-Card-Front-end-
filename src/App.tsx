@@ -8,7 +8,7 @@ function App() {
     <Routes>
       <Route path="/change-password" element={<Change />} />
       <Route path="/" element={<Forget />} />
-      <Route path="/reset-password" element={<Reset />} />
+      <Route path="/reset-password/:id/:token" element={<Reset />} />
     </Routes>
   );
 }

@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 interface Props {
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
   handleResetPass: (email: string) => void;
 }
 
-const EmailReset = ({ handleResetPass }: Props) => {
+const EmailReset = ({ handleResetPass, setOpenModal }: Props) => {
   const [email, setEmail] = useState("");
 
   const changeHandler = (e: any) => {
@@ -14,6 +15,9 @@ const EmailReset = ({ handleResetPass }: Props) => {
   const submitEmail = (e: any) => {
     e.preventDefault();
     if (email.length > 0) handleResetPass(email);
+    setTimeout(() => {
+      setOpenModal(true)
+    }, 2000)
     setEmail("");
   };
 
@@ -32,7 +36,6 @@ const EmailReset = ({ handleResetPass }: Props) => {
           />
         </div>
       </label>
-
       <br />
       <button className="password_btn">Send Reset Link</button>
     </form>
