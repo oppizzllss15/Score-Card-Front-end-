@@ -1,6 +1,6 @@
-import { Logo } from "../../Components/Logo"
-import { SignupButton} from "../../Components/SignupButton"
-import { SimpleInput} from "../../Components/SimpleInput"
+import { Logo } from "../../components/Logo"
+import { SignupButton} from "../../components/SignupButton"
+import { SimpleInput} from "../../components/SimpleInput"
 import "./SignUp.css"
 
 export const Signup = () => {
