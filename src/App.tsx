@@ -1,16 +1,20 @@
-import React from 'react';
-import './App.css';
-import { Change } from './pages/Change_password/Change';
-import { Forget } from './pages/Forget/Forget';
-import { Reset } from './pages/Reset_password/Reset';
-import { Signup } from './pages/SignUp/Signup';
-
+import React from "react";
+import "./App.css";
+import { Login } from "./pages/Login/Login";
+import { Signup } from "./pages/SignUp/Signup";
+import { Nav } from "./components/Nav";
+import { Index } from "./layout/Index";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-     <div className="App">
-      <Signup />
-     </div>
+    <div className="App">
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+
+    </div>
   );
 }
 
