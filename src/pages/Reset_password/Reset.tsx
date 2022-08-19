@@ -3,13 +3,10 @@ import { useState } from "react";
 import "./Reset.css";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { resetAccountPassword } from "../../utils/api";
-import Modal from "../../components/Message-modal.component";
+import Swal from "sweetalert2";
 
 const Reset = () => {
   const params: any = useParams();
-
-  const [resp, setResp] = useState("");
-  const [modalOpen, setModalOpen] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -24,23 +21,42 @@ const Reset = () => {
   const submitPasswords = async (e: any) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      return alert("Passwords do not match");
+      return Swal.fire("Passwords do not match");
     }
 
-    setNewPassword("")
-    setConfirmPassword("")
+    setNewPassword("");
+    setConfirmPassword("");
     const res = await resetAccountPassword(
       params.id,
       params.token,
       newPassword,
       confirmPassword
     );
-    if (res.message) setResp(res.message);
-    else setResp(res.error);
 
-    setTimeout(() => {
-      setModalOpen(true)
-    }, 2000)
+    if (res.message && res.message.match(/successfully changed/ig)) {
+      setTimeout(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Successful",
+          text: `${res.message}`,
+          confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+          confirmButtonAriaLabel: "Thumbs up, great!",
+          confirmButtonColor: "#93d413",
+          footer: '<a href="">Go to Login?</a>'
+        });
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        Swal.fire({
+          icon: "info",
+          title: "Error",
+          text: `${res.error}`,
+          showDenyButton: true,
+          denyButtonText: "Try again",
+          confirmButtonColor: "#93d413"
+        });
+      }, 1000);
+    }
   };
 
   return (
@@ -91,9 +107,10 @@ const Reset = () => {
             </div>
           </label>
           <br />
-          <button type="submit" className="password_btn">Change Password</button>
+          <button type="submit" className="password_btn">
+            Change Password
+          </button>
         </form>
-        {modalOpen && <Modal setOpenModal={setModalOpen} resp={resp} />}
       </div>
 
       <div className="second">

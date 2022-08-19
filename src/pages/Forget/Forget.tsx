@@ -1,20 +1,39 @@
-import { useState } from "react";
 import "./Forget.css";
-import EmailReset from "../../components/Reset-email.component";
+import EmailReset from "../../components/Password-reset/Reset-email.component";
 import { sendResetLink } from "../../utils/api"
-import Modal from "../../components/Message-modal.component"
-
+import Swal from "sweetalert2"
 
 export const Forget = () => {
-  const [ resp, setResp ] = useState("")
-  const [modalOpen, setModalOpen] = useState(false);
-
 
   const handleResetPass = async (email: string) => {
     const res = await sendResetLink(email)
-    if (res.message) setResp(res.message)
-    else setResp(res.error)
-    console.log(resp)
+    console.log(res)
+
+    if (res.message && !res.message.match(/not found/ig)) {
+      setTimeout(() => {
+        Swal.fire({
+          // position: 'top',
+          icon: "success",
+          title: "Successful",
+          text: `${res.message}`,
+          confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> Great!',
+          confirmButtonAriaLabel: 'Thumbs up, great!',
+          confirmButtonColor: "#93d413"
+        });
+      }, 1000)
+    } else { 
+      setTimeout(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Failed",
+          text: `${res.message}`,
+          showDenyButton: true,
+          denyButtonText: "Try again",
+          confirmButtonColor: "#93d413"
+        });
+      }, 1000)
+    }
   }
 
   return (
@@ -31,8 +50,7 @@ export const Forget = () => {
           <p className="please">
             Send a Link to your email to reset your password
           </p>
-          <EmailReset handleResetPass={handleResetPass} setOpenModal={setModalOpen}/>
-          {modalOpen && <Modal setOpenModal={setModalOpen} resp={resp}/>}
+          <EmailReset handleResetPass={handleResetPass}/>
         </div>
 
         <div className="second">
