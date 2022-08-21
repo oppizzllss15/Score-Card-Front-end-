@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-// import { useNavigate } from "react-router-dom";import axios from "axios";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import { loginUser } from "../../utils/api";
 import "./Login.css";
 
@@ -18,26 +17,12 @@ function Login() {
     });
   };
 
-  // const onSubmit = async(e: FormEvent<HTMLFormElement>) =>{
-  //   try{
-  //     e.preventDefault()
-  //     await axios.post('http://localhost:5008/users/login', formData)
-  //     swal("Success", "Login successful", "success")
-
-  //   }catch{
-  //     swal("Error", "Login failed", "error")
-  //   }
-  // }
-
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await loginUser(formData.email, formData.password);
     const result = await res;
     console.log(result);
-    localStorage.setItem('token', result.token);
-    // if(result.user) {
-    //   navigate("/home")
-    // }
+    localStorage.setItem("token", result.token);
   };
 
   return (

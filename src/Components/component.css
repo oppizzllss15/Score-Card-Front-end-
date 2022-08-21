@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     font-weight: 470;
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 1.8rem;
     color: #21334F;
 }
@@ -22,6 +22,7 @@
    color: #2c3f5f;
    font-weight: 200;
    margin-top: 8px;
+   margin-bottom: 30px;
 }
 
 .simple:focus {

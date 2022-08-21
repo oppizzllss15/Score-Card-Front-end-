@@ -1,7 +1,8 @@
-import "./Forget.css";
+import { Link } from "react-router-dom";
 import EmailReset from "../../components/Password-reset/Reset-email.component";
 import { sendResetLink } from "../../utils/api";
 import Swal from "sweetalert2";
+import "./Forget.css";
 
 export const Forget = () => {
   const handleResetPass = async (email: string) => {
@@ -43,7 +44,9 @@ export const Forget = () => {
             <p>Scorecard</p>
           </div>
 
-          <p className="go_back">Go back to login</p>
+          <Link to="/login">
+            <p className="go_back">Go back to login</p>
+          </Link>
           <p className="reset">Forget Password?</p>
           <p className="please">
             Send a Link to your email to reset your password

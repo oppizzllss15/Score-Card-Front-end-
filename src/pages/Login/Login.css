@@ -5,7 +5,6 @@
 }
 .first{
     flex: 6;
-    border: 1px solid black;
     padding: 0px 40px;
 }
 .second{

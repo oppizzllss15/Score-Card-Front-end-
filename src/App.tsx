@@ -4,6 +4,7 @@ import { Forget } from "./pages/Forget/Forget";
 import { Reset } from "./pages/Reset_password/Reset";
 import './App.css';
 import {Login} from './pages/Login/Login';
+import { Signup } from "./pages/SignUp/Signup";
 import { DashboardLayout } from './pages/DashboardLayout/DashboardLayout';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       </Route>
       <Route path="/update-password" element={<Change/>} />
       <Route path="/login" element={<Login/>} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   )
 }

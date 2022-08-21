@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import "./Reset.css";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { resetAccountPassword } from "../../utils/api";
 import Swal from "sweetalert2";
+import "./Reset.css";
 
 const Reset = () => {
   const params: any = useParams();
@@ -21,7 +22,7 @@ const Reset = () => {
   const submitPasswords = async (e: any) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      return Swal.fire("Passwords do not match");
+      return Swal.fire("", "Passwords do not match");
     }
 
     setNewPassword("");
@@ -33,7 +34,7 @@ const Reset = () => {
       confirmPassword
     );
 
-    if (res.message && res.message.match(/successfully changed/ig)) {
+    if (res.message && res.message.match(/successfully changed/gi)) {
       setTimeout(() => {
         Swal.fire({
           icon: "success",
@@ -42,7 +43,7 @@ const Reset = () => {
           confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
           confirmButtonAriaLabel: "Thumbs up, great!",
           confirmButtonColor: "#93d413",
-          footer: '<a href="">Go to Login?</a>'
+          footer: '<a href="">Go to Login?</a>',
         });
       }, 1000);
     } else {
@@ -53,7 +54,7 @@ const Reset = () => {
           text: `${res.error}`,
           showDenyButton: true,
           denyButtonText: "Try again",
-          confirmButtonColor: "#93d413"
+          confirmButtonColor: "#93d413",
         });
       }, 1000);
     }
@@ -67,7 +68,9 @@ const Reset = () => {
           <p>Scorecard</p>
         </div>
 
-        <p className="go_back">Go back to login</p>
+        <Link to="/login">
+          <p className="go_back">Go back to login</p>
+        </Link>
         <p className="reset">Reset Password</p>
         <p className="please">Please choose your new password</p>
 
