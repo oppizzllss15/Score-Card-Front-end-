@@ -1,10 +1,15 @@
 import React from 'react'
+import { isConstructorDeclaration } from 'typescript'
 
 
 function Home() {
   return (
-    <div>Homedfvdfvvhzvhjchccv</div>
+    <div>Home</div>
   )
 }
 
 export default Home
+
+
+
+
