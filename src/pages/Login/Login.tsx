@@ -19,10 +19,31 @@ function Login() {
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await loginUser(formData.email, formData.password);
-    const result = await res;
-    console.log(result);
-    localStorage.setItem("token", result.token);
+    try {
+      const res = await loginUser(formData.email, formData.password);
+      const result = await res;
+      localStorage.setItem("token", result.token);
+      Swal.fire({
+        position: "center",
+        title: "Successful",
+        icon: "success",
+        iconColor: "#93d413",
+        showConfirmButton: true,
+        confirmButtonColor: "#93d413",
+        html: "Successfully logged in",
+      });
+    } catch (err) {
+      Swal.fire({
+        position: "top",
+        title: "Error",
+        icon: "error",
+        showConfirmButton: false,
+        showDenyButton: true,
+        denyButtonText: "Try again",
+        denyButtonColor: "#93d413",
+        html: "Login failed",
+      });
+    }
   };
 
   return (
