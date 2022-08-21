@@ -1,28 +1,26 @@
 import "./Forget.css";
 import EmailReset from "../../components/Password-reset/Reset-email.component";
-import { sendResetLink } from "../../utils/api"
-import Swal from "sweetalert2"
+import { sendResetLink } from "../../utils/api";
+import Swal from "sweetalert2";
 
 export const Forget = () => {
-
   const handleResetPass = async (email: string) => {
-    const res = await sendResetLink(email)
-    console.log(res)
+    const res = await sendResetLink(email);
+    console.log(res);
 
-    if (res.message && !res.message.match(/not found/ig)) {
+    if (res.message && !res.message.match(/not found/gi)) {
       setTimeout(() => {
         Swal.fire({
           // position: 'top',
           icon: "success",
           title: "Successful",
           text: `${res.message}`,
-          confirmButtonText:
-            '<i class="fa fa-thumbs-up"></i> Great!',
-          confirmButtonAriaLabel: 'Thumbs up, great!',
-          confirmButtonColor: "#93d413"
+          confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+          confirmButtonAriaLabel: "Thumbs up, great!",
+          confirmButtonColor: "#93d413",
         });
-      }, 1000)
-    } else { 
+      }, 1000);
+    } else {
       setTimeout(() => {
         Swal.fire({
           icon: "error",
@@ -30,11 +28,11 @@ export const Forget = () => {
           text: `${res.message}`,
           showDenyButton: true,
           denyButtonText: "Try again",
-          confirmButtonColor: "#93d413"
+          confirmButtonColor: "#93d413",
         });
-      }, 1000)
+      }, 1000);
     }
-  }
+  };
 
   return (
     <div>
@@ -50,7 +48,7 @@ export const Forget = () => {
           <p className="please">
             Send a Link to your email to reset your password
           </p>
-          <EmailReset handleResetPass={handleResetPass}/>
+          <EmailReset handleResetPass={handleResetPass} />
         </div>
 
         <div className="second">
