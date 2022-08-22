@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { loginUser } from "../../utils/api";
 import "./Login.css";
@@ -80,12 +81,12 @@ function Login() {
               value={formData.password}
               onChange={(e) => handleChange(e)}
             />
-            <h5 className="forget">Forgot password?</h5>
+            <Link to="/forgot/password"><h5 className="forget">Forgot password?</h5></Link>
             <button className="login-button">Login</button>
           </form>
           <div className="signup">
             <p>
-              Don't have an account? <a href="">Sign Up</a>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
           </div>
         </div>

@@ -1,0 +1,89 @@
+.outer-box {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #f9f9f9;
+  padding: 2.8rem;
+  box-sizing: border-box;
+}
+
+.box-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: #21334f;
+}
+
+.vector-icon {
+  position: absolute;
+  left: 16.67%;
+  right: 16.67%;
+  top: 20.83%;
+  bottom: 20.83%;
+
+  background: #21334f;
+}
+
+.link-container {
+  width: 9.5rem;
+  height: 29px;
+  box-sizing: border-box;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+  color: #21334f;
+  margin: 5px, 0, 20px, 0;
+}
+
+.link-box {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.back-arrow {
+  width: 20px;
+  margin-right: 0.8rem;
+}
+
+.devs-box {
+  width: 139px;
+  height: 39px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  margin: 5px, 0, 10px, 0;
+
+  color: #03435f;
+}
+
+.table-container {
+  margin-top: 5.5rem;
+  box-sizing: border-box;
+  position: absolute;
+  width: 80%;
+  background: #ffffff;
+  text-align: left;
+}
+
+.table-header {
+  background: #f4f3f4;
+  border: none;
+  padding: 13px;
+  line-height: 48px;
+  text-align: center;
+  color: #21334f;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}

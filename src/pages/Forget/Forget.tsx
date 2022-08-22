@@ -7,7 +7,6 @@ import "./Forget.css";
 export const Forget = () => {
   const handleResetPass = async (email: string) => {
     const res = await sendResetLink(email);
-    console.log(res);
 
     if (res.message && !res.message.match(/not found/gi)) {
       setTimeout(() => {
