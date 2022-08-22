@@ -7,6 +7,7 @@ import { GrHomeRounded } from "react-icons/gr";
 import { BiUser } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import "./DashboardLayout.css";
+import { Layout } from "../../layout/Layout";
 
 export const DashboardLayout = () => {
    return (
@@ -60,18 +61,10 @@ export const DashboardLayout = () => {
                   </div>
                </div>
                <div className="content-part" style={{padding: "32px"}}>
-                  <p>
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                     Mollitia nisi consequuntur reiciendis illo officia
-                     accusantium, iusto sit nam iste atque sunt, magnam esse
-                     saepe. Explicabo ipsa eius perferendis eligendi soluta?
-                     Perferendis neque illo officiis quas, expedita, impedit
-                     magnam rerum laudantium dolores labore, esse nam aspernatur
-                     incidunt animi eum sed. Cumque, error repudiandae tenetur
-                     ex quam expedita ab dolores voluptatibus repellat.
-                  </p>
+                  
+             <Layout />
 
-                  <Outlet />
+                  
                </div>
             </div>
          </div>
