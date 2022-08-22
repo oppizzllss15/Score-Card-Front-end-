@@ -48,7 +48,7 @@ export const DashboardLayout = () => {
                      </div>
 
                      <div className="dash_icon">
-                        <AiOutlineUserAdd /> <p>User Mangement</p>
+                        <AiOutlineUserAdd /> <p>Admin Mangement</p>
                      </div>
                   </div>
 
@@ -59,7 +59,7 @@ export const DashboardLayout = () => {
                      </div>
                   </div>
                </div>
-               <div className="content-part">
+               <div className="content-part" style={{padding: "32px"}}>
                   <p>
                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                      Mollitia nisi consequuntur reiciendis illo officia
