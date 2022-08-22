@@ -7,7 +7,7 @@ import { GrHomeRounded } from "react-icons/gr";
 import { BiUser } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import "./DashboardLayout.css";
-import DevsWeeklyPerformance from "../DevsWeeklyPerformance/DevsWeeklyPerformance";
+import { Layout } from "../../layout/Layout";
 
 export const DashboardLayout = () => {
    return (
@@ -49,7 +49,7 @@ export const DashboardLayout = () => {
                      </div>
 
                      <div className="dash_icon">
-                        <AiOutlineUserAdd /> <p>User Mangement</p>
+                        <AiOutlineUserAdd /> <p>Admin Mangement</p>
                      </div>
                   </div>
 
@@ -60,10 +60,11 @@ export const DashboardLayout = () => {
                      </div>
                   </div>
                </div>
-               <div className="content-part">
-               < DevsWeeklyPerformance />
+               <div className="content-part" style={{padding: "32px"}}>
+                  
+             <Layout />
 
-                  <Outlet />
+                  
                </div>
             </div>
          </div>

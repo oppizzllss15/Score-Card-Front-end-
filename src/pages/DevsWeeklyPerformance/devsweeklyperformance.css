@@ -24,12 +24,12 @@
 
 .dashboard-heading {
   margin-top: 32px;
-  border: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 760px;
   margin-bottom: 32px;
+  width: 1029px;
 }
 
 .dashboard {
@@ -70,6 +70,9 @@
   font-size: 16px;
   line-height: 19px;
   color: #979797;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
 .dashboard-body {
@@ -92,7 +95,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
- 
+ margin-top: 24px;
   color: #03435f;
 }
 
@@ -103,7 +106,6 @@
 
 .table-heading {
   margin-top: 22px;
-  border: 2px solid black;
   width: 1029px;
   height: 37px;
   left: 0px;
