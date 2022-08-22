@@ -126,11 +126,35 @@ export const deleteDevAccount = async (id: string) => {
   let token = localStorage.getItem("token");
   try {
     const resp = await fetch(`${url}/superadmin/user/delete/${id}`, {
-      method: "GET",
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updateDevAccount = async (
+  id: string,
+  firstname: string,
+  lastname: string,
+  phone: string,
+  squad: string,
+  stack: string
+) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/superadmin/user/update/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ firstname, lastname, phone, stack, squad }),
     });
     return resp.json();
   } catch (err) {
