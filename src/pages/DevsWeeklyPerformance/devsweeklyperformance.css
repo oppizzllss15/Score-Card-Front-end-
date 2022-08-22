@@ -6,11 +6,7 @@
 }
 
 .main {
-  display: flex;
-  position: relative;
-  width: 1440px;
-  height: 1024px;
-  background: #f8f8f8;
+  margin-left: 38px;
 }
 
 .dashboard-container {
@@ -24,7 +20,6 @@
   height: 809px;
   left: 330px;
   top: 128px;
-  margin-left: 38px;
 }
 
 .dashboard-heading {
@@ -80,14 +75,10 @@
 .dashboard-body {
   /* position: absolute; */
   display: flex;
-  width: 1029px;
-  height: 736px;
-  left: 2px;
-  top: 0px;
+  width: 1031px;
+  height: 737px;
   background: #ffffff;
-  margin-top: 200px;
-  margin-left: 332px;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .dashboard-body h3 {
@@ -101,12 +92,21 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
+ 
   color: #03435f;
 }
 
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
 .table-heading {
+  margin-top: 22px;
+  border: 2px solid black;
   width: 1029px;
   height: 37px;
-  left: 2px;
-  top: 75px;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.05);
 }
