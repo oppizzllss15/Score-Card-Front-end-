@@ -91,3 +91,13 @@ justify-content: space-between;
      border: none;
      outline: none;
 }
+
+.navbar {
+    position: absolute;
+    width: 1440px;
+    height: 96px;
+    left: 0px;
+    top: 0px;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+  }

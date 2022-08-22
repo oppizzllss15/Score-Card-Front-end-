@@ -1,0 +1,23 @@
+.sidebar {
+  position: absolute;
+  width: 292px;
+  height: 927px;
+  left: 0px;
+  top: 97px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.04));
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 16px;
+  position: absolute;
+  width: 244px;
+  height: 48px;
+  left: 24px;
+  top: 32px;
+  background: #14A800;
+  border-radius: 4px;
+}
