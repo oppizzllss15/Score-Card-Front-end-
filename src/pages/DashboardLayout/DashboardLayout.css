@@ -36,11 +36,12 @@ align-items: center;
 }
 .seaIn{
     width: 80%;
-    height: 30px;
+    height: 48px;
     border: none;
-    font-size: 14px;
-    padding-left: 40px;
+    font-size: 18px;
+    padding-left: 10px;
         background-color:#F8F9FA;
+        font-weight: 300;
 }
 .seaIn:focus{
     outline: none;
@@ -54,6 +55,9 @@ border: 1px solid rgba(0, 0, 0, 0.05);
     align-items: center;
     padding-left: 10px;
     background-color: #F8F9FA;
+    font-size: 20px;
+    color: #455d83;
+    
 }
 .content{
     display: flex;
@@ -66,15 +70,14 @@ border: 1px solid rgba(0, 0, 0, 0.05);
     justify-content: space-between;
     width: 292px;
      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-     height: calc(100vh - 96px);
-     padding: 45px 24px; 
+     padding: 45px 24px;
+     height: auto; 
 }
 
 .content-part{
     flex: 10;
    overflow: auto;
     height: 100%;
-
 }
 
 

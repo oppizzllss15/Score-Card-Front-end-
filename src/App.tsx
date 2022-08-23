@@ -9,15 +9,16 @@ import { DashboardLayout } from './pages/DashboardLayout/DashboardLayout';
 
 function App() {
   return (
-    //  <Routes>
-    //     <Route path="/" element={<Forget />} />
-    //     <Route path="/reset-password/:id/:token" element={<Reset />} />
-    //     <Route path="/update-password" element={<Change/>} />
-    //     <Route path="/login" element={<Login/>} />
-    //     <Route path="/signup" element={<Signup />} />
-    //   </Routes>
      <div>
-        <DashboardLayout />
+        <Routes>
+           <Route path="/" element={<Forget />} />
+           <Route path="/reset-password/:id/:token" element={<Reset />} />
+           <Route path="/login" element={<Login />} />
+           <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <div>
+           <DashboardLayout />
+        </div>
      </div>
   );
 }
