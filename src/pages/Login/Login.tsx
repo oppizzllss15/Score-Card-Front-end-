@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-// import { useNavigate } from "react-router-dom";import axios from "axios";
-import swal from "sweetalert";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { loginUser } from "../../utils/api";
 import "./Login.css";
 
@@ -18,26 +18,33 @@ function Login() {
     });
   };
 
-  // const onSubmit = async(e: FormEvent<HTMLFormElement>) =>{
-  //   try{
-  //     e.preventDefault()
-  //     await axios.post('http://localhost:5008/users/login', formData)
-  //     swal("Success", "Login successful", "success")
-
-  //   }catch{
-  //     swal("Error", "Login failed", "error")
-  //   }
-  // }
-
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await loginUser(formData.email, formData.password);
-    const result = await res;
-    console.log(result);
-    localStorage.setItem('token', result.token);
-    // if(result.user) {
-    //   navigate("/home")
-    // }
+    try {
+      const res = await loginUser(formData.email, formData.password);
+      const result = await res;
+      localStorage.setItem("token", result.token);
+      Swal.fire({
+        position: "center",
+        title: "Successful",
+        icon: "success",
+        iconColor: "#93d413",
+        showConfirmButton: true,
+        confirmButtonColor: "#93d413",
+        html: "Successfully logged in",
+      });
+    } catch (err) {
+      Swal.fire({
+        position: "top",
+        title: "Error",
+        icon: "error",
+        showConfirmButton: false,
+        showDenyButton: true,
+        denyButtonText: "Try again",
+        denyButtonColor: "#93d413",
+        html: "Login failed",
+      });
+    }
   };
 
   return (
@@ -74,12 +81,12 @@ function Login() {
               value={formData.password}
               onChange={(e) => handleChange(e)}
             />
-            <h5 className="forget">Forgot password?</h5>
+            <Link to="/forgot/password"><h5 className="forget">Forgot password?</h5></Link>
             <button className="login-button">Login</button>
           </form>
           <div className="signup">
             <p>
-              Don't have an account? <a href="">Sign Up</a>
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
           </div>
         </div>

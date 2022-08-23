@@ -1,18 +1,196 @@
 const url = process.env.REACT_APP_BACKEND_URI;
 
-export const loginUser = async(email: string, password: string) => {
-    // let token = localStorage.getItem('token')
-    try {
-        const resp = await fetch(`${url}/users/login`, {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-                // authorization: token
-            },
-            body: JSON.stringify({email, password})
-        })
-        return resp.json()
-    }catch(err) {
-        console.log(err)
-    }
-}
+export const sendResetLink = async (email: string) => {
+  try {
+    const resp = await fetch(`${url}/users/forgot/password`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+    const res = await resp.json();
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const resetAccountPassword = async (
+  id: string,
+  ticket: string,
+  newPassword: string,
+  confirmPassword: string
+) => {
+  try {
+    const resp = await fetch(`${url}/users/reset/password/${id}/${ticket}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ newPassword, confirmPassword }),
+    });
+    const res = await resp.json();
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const changeUserPassword = async (
+  newPassword: string,
+  confirmPassword: string
+) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/update/password`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ newPassword, confirmPassword }),
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const loginUser = async (email: string, password: string) => {
+  try {
+    const resp = await fetch(`${url}/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const devManagement = async () => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/superadmin/all/devs`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const activateDevAccount = async (id: string) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/superadmin/user/activate/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const deactivateDevAccount = async (id: string) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/superadmin/user/deactivate/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const deleteDevAccount = async (id: string) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/superadmin/user/delete/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updateDevAccount = async (
+  id: string,
+  firstname: string,
+  lastname: string,
+  phone: string,
+  squad: string,
+  stack: string
+) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/superadmin/user/update/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ firstname, lastname, phone, stack, squad }),
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const signUp = async (
+  firstname: string,
+  lastname: string,
+  email: string,
+  stack: string,
+  squad: string,
+  phone: string,
+  password: string,
+  confirmPassword: string
+) => {
+  try {
+    const resp = await fetch(`${url}/superadmin/create`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        email,
+        stack,
+        squad,
+        phone,
+        password,
+        confirmPassword,
+      }),
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
