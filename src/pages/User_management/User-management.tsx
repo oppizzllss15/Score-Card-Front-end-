@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
 import "./User-management.css";
 
 interface UserType {
-  id?: string;
+  id: string;
   firstname?: string;
   lastname?: string;
   email?: string;
@@ -23,7 +23,8 @@ interface UserType {
 
 const DecadevManagement = () => {
   const [data, setData] = useState([]);
-  const history = useNavigate()
+  const [item, setItem] = useState("");
+  const history = useNavigate();
 
   const getDevs = async () => {
     try {
@@ -102,8 +103,8 @@ const DecadevManagement = () => {
     const res = await deleteDevAccount(id);
 
     if (res.message && res.message.match(/has been removed/gi)) {
-      const filtered = data.filter((user: UserType) => user.id !== id)
-      setData(filtered)
+      const filtered = data.filter((user: UserType) => user.id !== id);
+      setData(filtered);
       setTimeout(() => {
         Swal.fire({
           position: "top",
@@ -130,6 +131,11 @@ const DecadevManagement = () => {
     }
   };
 
+  const setActive = (id: string) => {
+    console.log(id);
+    setItem(id);
+  };
+
   const updateUserAcct = async (
     id: string,
     firstname: string,
@@ -148,7 +154,7 @@ const DecadevManagement = () => {
     );
 
     if (res.message && res.message.match(/Updated successfully/gi)) {
-      getDevs()
+      getDevs();
       setTimeout(() => {
         Swal.fire({
           position: "top",
@@ -207,6 +213,8 @@ const DecadevManagement = () => {
                   deactivateUser={deactivateUser}
                   deleteUser={deleteUser}
                   updateUserAcct={updateUserAcct}
+                  setActive={setActive}
+                  selectedItem= {item}
                 />
               ))}
             </tbody>

@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Swal from "sweetalert2";
 import "./dev.management.css";
 
 interface Prop {
   users: {
-    id?: string;
+    id: string;
     firstname?: string;
     lastname?: string;
     email?: string;
@@ -22,6 +22,8 @@ interface Prop {
     squad: string,
     stack: string
   ) => void;
+  setActive: (id: string) => void;
+  selectedItem: string;
 }
 
 const defaultFormField = {
@@ -38,6 +40,8 @@ export default function Devs({
   deactivateUser,
   deleteUser,
   updateUserAcct,
+  setActive,
+  selectedItem,
 }: Prop) {
   const [isActive, setIsActive] = useState(false);
   const [updateCall, setUpdateCall] = useState(false);
@@ -53,8 +57,8 @@ export default function Devs({
     });
   };
 
-  const handleClick = (e: any) => {
-    e.preventDefault();
+  const handleClick = (id: string) => {
+    setActive(id);
     if (isActive) setIsActive(false);
     else {
       setIsActive(true);
@@ -128,10 +132,13 @@ export default function Devs({
         <td>{users.stack}</td>
         <td>{users.squad}</td>
         <td className="dropdown">
-          <button className="dropdown-btn" onClick={handleClick}>
+          <button
+            className="dropdown-btn"
+            onClick={() => handleClick(users.id)}
+          >
             ...
           </button>
-          {isActive && (
+          {isActive && users.id === selectedItem ? (
             <div className="dropdown-content">
               <div className="dropdown-item">
                 <button name={users.id} onClick={handleEdit}>
@@ -154,10 +161,10 @@ export default function Devs({
                 </button>
               </div>
             </div>
-          )}
+          ) : null}
           {updateCall && (
             <div className="from">
-              <p className="top-text"></p>
+              <p className="top-text">Update User Details</p>
               <form onSubmit={(e) => onSubmit(e)}>
                 <label className="newpassword" htmlFor="">
                   Firstname

@@ -6,14 +6,10 @@
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
    border-bottom: 1px solid rgb(214, 213, 213);
-}
-
-.dropdown {
-    position: relative;
+   position: relative;
 }
 
 .dropdown-btn {
-    position: relative;
     padding: 0px;
     border: none;
     text-decoration: none;
@@ -21,16 +17,17 @@
     height: 0.00rem;
 }
 
-.dropdown .dropdown-content {
+.dropdown-content {
     position: absolute;
     width: 13rem;
-    top: 110%;
+    top: 20%;
     right: 16%;
     padding: 15px;
     background: #fff;
     box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
     font-weight: 400;
     text-align: left;
+    z-index: 1;
 }
 
 .dropdown .dropdown-content .dropdown-item {
@@ -39,7 +36,7 @@
     transition: all 0.2s;
 }
 
-.dropdown .dropdown-content .dropdown-item  button{
+.dropdown {
     background: #ffffff;
     position: relative;
     padding: 0.4rem 4rem 0.3rem 0.4rem;
@@ -70,15 +67,18 @@
     background: #fff;
     box-shadow: 3px 3px 10px 68rem rgba(0,0,0,0.4);
     text-align: left;
-   left: -500%;
+   left: -600%;
    top: -500%;
  }
 
  .top-text {
     font-size: 0.9rem;
-    border-bottom: 0px solid #e6e6e6;
-    padding: 17px 30px;
-    color: #7d95ba;
+    border-bottom: 1px solid rgb(213, 211, 211);
+    /* padding: 17px 30px; */
+    color: #21334f;
+    text-align: center;
+    font-weight: 500;
+    font-size: 19px;
  }
 
  .newpassword {
@@ -103,7 +103,7 @@
  }
  
  .btn_change {
-    width: 100%;
+    width: 103%;
     height: 40px;
     border: none;
     border-radius: 5px;
