@@ -10,6 +10,9 @@ import { Signup } from "./pages/SignUp/Signup";
 import { DashboardLayout } from './pages/DashboardLayout/DashboardLayout';
 import DecadevManagement from "./pages/User_management/User-management";
 import { CreateUser } from "./pages/Create_user/Create_user";
+import {AdminManagement} from './pages/admin/AdminManagement'
+
+
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
       <Route path="/update-password" element={<Change/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/manage_admins" element={<AdminManagement />} />
       <Route path="/all/devs" element={<DecadevManagement />} />
       <Route path="/stacks" element={<Admin />} />
       <Route path="/createuser" element={<CreateUser />} />

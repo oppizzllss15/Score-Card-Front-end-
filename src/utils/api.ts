@@ -1,4 +1,8 @@
- const url = process.env.REACT_APP_BACKEND_URI;
+
+
+import { IAdmin, IStack } from "../typings";
+const url = process.env.REACT_APP_BACKEND_URI;
+
 
 export const sendResetLink = async (email: string) => {
    try {
@@ -243,4 +247,3 @@ export const createUser = async (
      console.log(error);
    }
 };
-
