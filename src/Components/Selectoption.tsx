@@ -16,16 +16,15 @@ type Optiontype = {
 interface Option {
    image: string;
    name: string;
-   
 }
 
 export const Selectoption = (props: Optiontype) => {
    const [option, setOption] = useState([]);
-  //  const [stack, setStack] = useState("");
+   //  const [stack, setStack] = useState("");
 
-  //  const handleChange = (event: any) => {
-  //     setStack(event.target.value);
-  //  };
+   //  const handleChange = (event: any) => {
+   //     setStack(event.target.value);
+   //  };
 
    const getStacks = async () => {
       const resp = await getallStack();
@@ -37,8 +36,7 @@ export const Selectoption = (props: Optiontype) => {
    }, []);
    console.log(option);
    return (
-     <div>
-       
+      <div>
          <select
             className="select-container"
             value={props.value}

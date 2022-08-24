@@ -6,8 +6,6 @@ import { SimpleInput } from "../../components/SimpleInput";
 import { createUser } from "../../utils/api";
 import "./createuser.css";
 
-
-
 export const CreateUser = () => {
    interface FormDataType {
       firstname: string;
@@ -22,14 +20,14 @@ export const CreateUser = () => {
       email: "",
       squad: "",
       stack: "",
-   })
+   });
 
-   const [loading, setLoading] = useState(false)
+   const [loading, setLoading] = useState(false);
 
    const { firstname, lastname, email, squad, stack } = formData;
 
    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      const getValue : any = { ...formData };
+      const getValue: any = { ...formData };
       getValue[e.target.name] = e.target.value;
       setFormData(getValue);
    };
@@ -39,25 +37,17 @@ export const CreateUser = () => {
       setLoading(true);
 
       try {
-         await createUser(
-            firstname,
-            lastname,
-            email,
-            stack,
-            squad
-         );
-      
+         await createUser(firstname, lastname, email, stack, squad);
+
          setLoading(false);
       } catch (error) {
          setLoading(false);
-      } finally { 
+      } finally {
          setLoading(false);
       }
 
-      
       console.log(formData);
-      
-    }
+   };
 
    return (
       <div>

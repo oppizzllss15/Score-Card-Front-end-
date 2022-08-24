@@ -78,6 +78,7 @@ border: 1px solid rgba(0, 0, 0, 0.05);
     flex: 10;
    overflow: auto;
     height: 100%;
+ 
 }
 
 
@@ -100,6 +101,7 @@ border: 1px solid rgba(0, 0, 0, 0.05);
   }
   .content-part{
       flex: 8;
+      background-color: #e6e4e4;
   }
   .navbar{
       display: flex;
