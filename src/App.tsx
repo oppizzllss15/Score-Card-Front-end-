@@ -4,7 +4,7 @@ import { Forget } from "./pages/Forget/Forget";
 import { Reset } from "./pages/Reset_password/Reset";
 import './App.css';
 import { Admin } from './pages/Admin-dashboard/Admin';
-
+import DevsWeeklyPerformance from "./pages/DevsWeeklyPerformance/DevsWeeklyPerformance";
 import {Login} from './pages/Login/Login';
 import { Signup } from "./pages/SignUp/Signup";
 import { DashboardLayout } from './pages/DashboardLayout/DashboardLayout';
@@ -30,5 +30,6 @@ function App() {
       <Route path="/createuser" element={<CreateUser />} />
     </Routes>
   )
+
 }
 export default App;

@@ -3,7 +3,6 @@
 import { IAdmin, IStack } from "../typings";
 const url = process.env.REACT_APP_BACKEND_URI;
 
-
 export const sendResetLink = async (email: string) => {
    try {
       const resp = await fetch(`${url}/users/forgot/password`, {
@@ -246,4 +245,13 @@ export const createUser = async (
    } catch (error) {
      console.log(error);
    }
+}
+
+export const filterDevsPerformanceByWeek = async (id: string | number) => {
+  try {
+    const resp = await fetch(`${url}/getscores/${id}`);
+    return await resp.json();
+  } catch (err) {
+    return[]
+  }
 };

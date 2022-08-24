@@ -7,11 +7,14 @@ import { Forget } from '../pages/Forget/Forget'
 import { Login } from '../pages/Login/Login'
 import { Reset } from '../pages/Reset_password/Reset'
 import { Signup } from '../pages/SignUp/Signup'
+import DevsWeeklyPerformance from "../pages/DevsWeeklyPerformance/DevsWeeklyPerformance";
+
 
 
 
 export const Layout = () => {
   return (
+
      <Routes>
        
         <Route path="/" element={<Forget />} />
@@ -21,6 +24,11 @@ export const Layout = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path = "/create-admin" element={<CreateAdmin />} />
         <Route path = "/createuser" element={<CreateUser />} />
+        <Route
+        path="/devsweeklyperformance"
+        element={<DevsWeeklyPerformance />}
+      ></Route>
      </Routes>
   );
 }
+
