@@ -1,7 +1,7 @@
 .outer-box {
   min-height: 100vh;
   min-width: 100vw;
-  background: #f9f9f9;
+  background: #E5E5E5;
   padding: 2.8rem;
   box-sizing: border-box;
 }
@@ -10,7 +10,7 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  background: #f9f9f9;
+  background: #E5E5E5;
 }
 
 a {
@@ -46,7 +46,7 @@ a {
   display: flex;
   flex-direction: row;
   border: none;
-  background: #f9f9f9;
+  background: #E5E5E5;
   cursor: pointer;
 }
 
@@ -76,10 +76,11 @@ a {
   width: 80%;
   background: #ffffff;
   text-align: left;
+  border-collapse: collapse;
 }
 
 .table-header {
-  background: #f4f3f4;
+  background: rgba(0, 0, 0, 0.04);
   border: none;
   padding: 13px;
   line-height: 48px;

@@ -2,9 +2,10 @@
   text-align: center;
   color: #21334f;
   font-size: 16px;
-  line-height: 36px;
+  line-height: 39px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+   border-bottom: 1px solid rgb(214, 213, 213);
 }
 
 .dropdown {
@@ -12,11 +13,12 @@
 }
 
 .dropdown-btn {
-    background: #ffffff;
-    padding: 7px;
+    position: relative;
+    padding: 0px;
     border: none;
     text-decoration: none;
     font-size: 1.4rem;
+    height: 0.00rem;
 }
 
 .dropdown .dropdown-content {
@@ -39,6 +41,7 @@
 
 .dropdown .dropdown-content .dropdown-item  button{
     background: #ffffff;
+    position: relative;
     padding: 0.4rem 4rem 0.3rem 0.4rem;
     color: #21334f;
     border: none;
@@ -56,6 +59,7 @@
 }
 
 .from {
+   width: 50%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -63,11 +67,11 @@
     font-weight: 300;
     font-size: 1rem;
     width: 25rem;
-    top: -150%;
-    right: 16%;
     background: #fff;
-    box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
+    box-shadow: 3px 3px 10px 68rem rgba(0,0,0,0.4);
     text-align: left;
+   left: -500%;
+   top: -500%;
  }
 
  .top-text {
