@@ -1,5 +1,6 @@
 const url = process.env.REACT_APP_BACKEND_URI;
 
+
 export const sendResetLink = async (email: string) => {
   try {
     const resp = await fetch(`${url}/users/forgot/password`, {
@@ -194,3 +195,20 @@ export const signUp = async (
     console.log(err);
   }
 };
+
+export const getAllStack = async () => {
+    let token = localStorage.getItem('token')
+    try {
+        const resp = await fetch(`${url}/superadmin/stacks`, {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+                authorization: `Bearer ${token}`
+            }
+        })
+        return resp.json()
+    } catch (err) {
+        console.log(err)
+    }
+}
+
