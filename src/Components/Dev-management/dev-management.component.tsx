@@ -111,6 +111,7 @@ export default function Devs({
       formData.squad,
       formData.stack
     );
+    setUpdateCall(false);
   };
 
   const handleWindow = (e: any) => {

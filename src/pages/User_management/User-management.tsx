@@ -22,7 +22,7 @@ interface UserType {
 }
 
 const DecadevManagement = () => {
-  let [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   const history = useNavigate()
 
   const getDevs = async () => {
@@ -102,6 +102,8 @@ const DecadevManagement = () => {
     const res = await deleteDevAccount(id);
 
     if (res.message && res.message.match(/has been removed/gi)) {
+      const filtered = data.filter((user: UserType) => user.id !== id)
+      setData(filtered)
       setTimeout(() => {
         Swal.fire({
           position: "top",
@@ -144,9 +146,9 @@ const DecadevManagement = () => {
       squad,
       stack
     );
-    console.log(res)
 
     if (res.message && res.message.match(/Updated successfully/gi)) {
+      getDevs()
       setTimeout(() => {
         Swal.fire({
           position: "top",
