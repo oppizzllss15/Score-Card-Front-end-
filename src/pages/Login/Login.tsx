@@ -9,6 +9,7 @@ function Login() {
     email: "",
     password: "",
   });
+  const [passwordVisible, setPasswordVisible] = useState(true)
   // const navigate = useNavigate()
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -54,8 +55,8 @@ function Login() {
             <label className="fname">Email address</label>
             <br />
             <input
-              type="text"
-              id="fname"
+              type="email"
+              id="name"
               name="email"
               placeholder="Enter email address"
               className="email"
@@ -66,7 +67,7 @@ function Login() {
             <label className="password-text">Password</label>
             <br />
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               placeholder="Enter password"
