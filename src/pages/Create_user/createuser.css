@@ -12,7 +12,7 @@
 }
 .form-boxx{
    width: 44.5vw;
-   height: 632px;
+   height: 692px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .headerCon{
@@ -45,4 +45,9 @@
 }
 .form-boxx hr{
      color: #BDBDBD; 
+}
+.control-text{
+    font-size: 1.2rem;
+    color: #21334F;
+    font-weight: bold;
 }
