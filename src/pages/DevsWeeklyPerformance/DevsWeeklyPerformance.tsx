@@ -1,9 +1,12 @@
+import { useEffect , useState} from "react";
 import "./devsweeklyperformance.css";
 import { AiOutlineCalendar } from "react-icons/ai";
+import TableList from "../../components/TableList";
 
 <AiOutlineCalendar />;
 
 const DevsWeeklyPerformance = () => {
+  const [week, setWeek] = useState(1);
   return (
     <div className="main">
       <div className="dashoard-container">
@@ -32,6 +35,7 @@ const DevsWeeklyPerformance = () => {
                   <th className="th-text th-9">Action</th>
                 </tr>
               </thead>
+              <TableList week={week} />
             </table>
           </div>
         </div>

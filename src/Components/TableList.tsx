@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import "./component.css";
+import { filterDevsPerformanceByWeek } from "../utils/api";
 
 type Devs = {
   Sn: number;
@@ -11,28 +13,36 @@ type Devs = {
   Cummulative_Score: number;
 };
 
-const TableList = (props: Devs) => {
+interface Week {
+  week: number;
+}
+const TableList = ({ week }: Week) => {
+  const [list, setList] = useState([]);
+
+  const filterPerformance = async () => {
+    let resp = await filterDevsPerformanceByWeek(week);
+    setList(resp);
+  };
+  useEffect(() => {
+    filterPerformance();
+  }, []);
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <th>{props.Sn}</th>
-            <th>{props.Firstname}</th>
-            <th>{props.Lastname}</th>
-            <th>{props.Algorithms}</th>
-            <th>{props.Weekly_Task}</th>
-            <th>{props.Assessment_Test}</th>
-            <th>{props.Agile_Test}</th>
-            <th>{props.Cummulative_Score}</th>
-            <th>{`***`}</th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <tbody>
+      {list.map((el, ind) => (
+      <tr>
+        <th>{ind + 1}</th>
+        <th>{el.Firstname}</th>
+        <th>{el.Lastname}</th>
+        <th>{el.Algorithms}</th>
+        <th>{el.Weekly_Task}</th>
+        <th>{el.Assessment_Test}</th>
+        <th>{el.Agile_Test}</th>
+        <th>{el.Cummulative_Score}</th>
+        <th>{`***`}</th>
+      </tr>
+      ))}
+    </tbody>
   );
 };
-
-
 
 export default TableList;

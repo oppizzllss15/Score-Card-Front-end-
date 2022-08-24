@@ -1,6 +1,5 @@
 const url = process.env.REACT_APP_BACKEND_URI;
 
-
 export const sendResetLink = async (email: string) => {
   try {
     const resp = await fetch(`${url}/users/forgot/password`, {
@@ -38,23 +37,26 @@ export const resetAccountPassword = async (
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-export const changeUserPassword = async (newPassword: string, confirmPassword: string) => {
-    let token = localStorage.getItem('token')
-   try {
-      const resp = await fetch(`${url}/update/password`, {
-         method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-          },
-         body: JSON.stringify({ newPassword, confirmPassword }),
-      });
-      return resp.json();
-   } catch (err) {
-      console.log(err);
-   }
+export const changeUserPassword = async (
+  newPassword: string,
+  confirmPassword: string
+) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/update/password`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ newPassword, confirmPassword }),
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const loginUser = async (email: string, password: string) => {
@@ -109,3 +111,11 @@ export const signUp = async (
   }
 };
 
+export const filterDevsPerformanceByWeek = async (id: string | number) => {
+  try {
+    const resp = await fetch(`${url}/getscores/${id}`);
+    return await resp.json();
+  } catch (err) {
+    return[]
+  }
+};
