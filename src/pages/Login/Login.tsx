@@ -9,7 +9,7 @@ function Login() {
     email: "",
     password: "",
   });
-  const [passwordVisible, setPasswordVisible] = useState(true)
+  const [passwordVisible, setPasswordVisible] = useState(true);
   // const navigate = useNavigate()
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -82,7 +82,9 @@ function Login() {
               value={formData.password}
               onChange={(e) => handleChange(e)}
             />
-            <Link to="/forgot/password"><h5 className="forget">Forgot password?</h5></Link>
+            <Link to="/forgot/password">
+              <h5 className="forget">Forgot password?</h5>
+            </Link>
             <button className="login-button">Login</button>
           </form>
           <div className="signup">
@@ -91,7 +93,6 @@ function Login() {
             </p>
           </div>
         </div>
-
         <div className="second">
           <img src="/assets/images/img1.png" alt="man with laptop" />
         </div>

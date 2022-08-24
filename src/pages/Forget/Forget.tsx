@@ -35,28 +35,28 @@ export const Forget = () => {
   };
 
   return (
-    <div>
-      <div className="change">
-        <div className="first">
-          <div className="logo">
-            <img src="/assets/images/logo.png" alt="" />
-            <p>Scorecard</p>
-          </div>
+     <div>
+        <div className="change">
+           <div className="first">
+              <div className="logo">
+                 <img src="/assets/images/logo.png" alt="" />
+                 <p>Scorecard</p>
+              </div>
 
-          <Link to="/login">
-            <p className="go_back">Go back to login</p>
-          </Link>
-          <p className="reset">Forget Password?</p>
-          <p className="please">
-            Send a Link to your email to reset your password
-          </p>
-          <EmailReset handleResetPass={handleResetPass} />
-        </div>
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                 <p className="go_back" >Go back to login</p>
+              </Link>
+              <p className="reset">Forget Password?</p>
+              <p className="please">
+                 Send a Link to your email to reset your password
+              </p>
+              <EmailReset handleResetPass={handleResetPass} />
+           </div>
 
-        <div className="second">
-          <img src="/assets/images/img1.png" alt="" />
+           <div className="second">
+              <img src="/assets/images/img1.png" alt="" />
+           </div>
         </div>
-      </div>
-    </div>
+     </div>
   );
 };

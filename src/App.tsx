@@ -3,7 +3,6 @@ import { Change } from "./pages/Change_password/Change";
 import { Forget } from "./pages/Forget/Forget";
 import { Reset } from "./pages/Reset_password/Reset";
 import './App.css';
-import { Index } from './layout/Index';
 import { Admin } from './pages/Admin-dashboard/Admin';
 
 import {Login} from './pages/Login/Login';
