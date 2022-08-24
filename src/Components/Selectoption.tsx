@@ -14,17 +14,14 @@ type Optiontype = {
 };
 
 interface Option {
+   id: string;
    image: string;
    name: string;
 }
 
 export const Selectoption = (props: Optiontype) => {
    const [option, setOption] = useState([]);
-   //  const [stack, setStack] = useState("");
 
-   //  const handleChange = (event: any) => {
-   //     setStack(event.target.value);
-   //  };
 
    const getStacks = async () => {
       const resp = await getAllStack();
@@ -44,7 +41,7 @@ export const Selectoption = (props: Optiontype) => {
             name={props.name}
          >
             {option.map((item: Option) => (
-               <option value={item.name}>{item.name}</option>
+               <option value={item.id}>{item.name}</option>
             ))}
          </select>
       </div>

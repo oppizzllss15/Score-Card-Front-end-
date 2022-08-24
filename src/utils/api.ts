@@ -1,4 +1,4 @@
-const url = process.env.REACT_APP_BACKEND_URI;
+ const url = process.env.REACT_APP_BACKEND_URI;
 
 export const sendResetLink = async (email: string) => {
    try {
@@ -207,6 +207,7 @@ export const getAllStack = async () => {
             Authorization: `Bearer ${token}`,
          },
       });
+      console.log(resp);
       return resp.json();
    } catch (error) {
       console.log(error);

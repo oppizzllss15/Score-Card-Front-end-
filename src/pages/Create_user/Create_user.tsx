@@ -1,4 +1,4 @@
-import { log } from "console";
+
 import React, { ChangeEvent, useState } from "react";
 import { Selectoption } from "../../components/Selectoption";
 import { SignupButton } from "../../components/SignupButton";
@@ -91,9 +91,9 @@ export const CreateUser = () => {
                         <label className="control-text">Stacks</label>
                         <Selectoption
                            label="stack"
-                           value={stack}
-                           handleChange={handleChange}
-                           name="stack"
+                           name="string"
+                           value="string"
+                           handleChange="any"
                         />
                      </div>
                      <SimpleInput
