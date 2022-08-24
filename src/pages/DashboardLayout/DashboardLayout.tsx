@@ -23,7 +23,7 @@ export const DashboardLayout = () => {
                      <FaSearch />
                      <input
                         type="text"
-                        placeholder="search"
+                        placeholder="Search"
                         className="seaIn"
                      />
                   </div>

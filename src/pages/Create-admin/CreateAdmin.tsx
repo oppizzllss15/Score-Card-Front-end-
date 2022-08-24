@@ -2,6 +2,7 @@ import "./CreateAdmin.css"
 import React from 'react';
 import { SimpleInput } from "../../components/SimpleInput";
 import { SignupButton } from "../../components/SignupButton";
+import { Selectoption } from "../../components/Selectoption";
 
 
 const CreateAdmin = () => {
@@ -40,13 +41,13 @@ const CreateAdmin = () => {
                         type="email"
                         value=""
                      />
-                     <SimpleInput
-                        placeholder="Select"
-                        name="stack"
-                        label="Stack"
-                        type="text"
-                        value=""
-                     />
+                     <div>
+                        <label className="control-text">Stacks</label>
+                        <Selectoption
+                           label="stack"                      
+                           
+                        />
+                     </div>
                      <SimpleInput
                         placeholder="Select"
                         name="Assign Role"

@@ -12,7 +12,7 @@
    margin-right: 10px;
 }
 
-.simple {
+.simple, .select-container {
    width: 100%;
    height: 40px;
    border: 1px solid #e6e6e6;
@@ -25,7 +25,7 @@
    margin-bottom: 30px;
 }
 
-.simple:focus {
+.simple:focus, .select-container:focus {
    border: 1px solid #50b051;
    outline-color: #bbe6bc;
 }
@@ -90,4 +90,8 @@ justify-content: space-between;
      outline-color: none;
      border: none;
      outline: none;
+}
+.select-container{
+    width: 100%;
+    height: 37px;
 }
