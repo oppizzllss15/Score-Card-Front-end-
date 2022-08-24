@@ -7,7 +7,7 @@ import {Login} from './pages/Login/Login';
 import { Signup } from "./pages/SignUp/Signup";
 import { DashboardLayout } from './pages/DashboardLayout/DashboardLayout';
 import DecadevManagement from "./pages/User_management/User-management";
-
+import {AdminManagement} from './pages/admin/AdminManagement'
 function App() {
   return (
     <Routes>
@@ -18,6 +18,7 @@ function App() {
       <Route path="/update-password" element={<Change/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/manage_admins" element={<AdminManagement />} />
       <Route path="/all/devs" element={<DecadevManagement />} />
     </Routes>
   )

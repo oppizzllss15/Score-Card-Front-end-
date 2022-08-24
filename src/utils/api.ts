@@ -1,3 +1,4 @@
+import { IAdmin, IStack } from "../typings";
 const url = process.env.REACT_APP_BACKEND_URI;
 
 export const sendResetLink = async (email: string) => {
@@ -194,3 +195,37 @@ export const signUp = async (
     console.log(err);
   }
 };
+
+
+
+export interface ResponseDataType<T,U>{data: T, message?: U}
+
+export function getAdmins(): Promise< ResponseDataType<IAdmin[], unknown>> {
+  return fetch(`${url}/superadmin//all/admin`, {
+    method: "GET",
+    headers: {"Accept": "application/json","Content-Type": "application/json"},
+  })
+  .then((res: any) => {
+     return res.json().then((data: ResponseDataType<IAdmin[], unknown>) => { console.log(JSON.stringify(data)); return data})
+    })
+  .catch((err) => {
+    console.log(err)
+    let result: ResponseDataType<IAdmin, unknown>
+  })
+}
+export interface ResponseDataType<T,U>{data: T, message?: U}
+
+
+export function changeAdminStatus(): Promise< ResponseDataType<IAdmin[], unknown>> {
+  return fetch(`${url}/superadmin//all/admin`, {
+    method: "GET",
+    headers: {"Accept": "application/json","Content-Type": "application/json"},
+  })
+  .then((res: any) => {
+     return res.json().then((data: ResponseDataType<IAdmin[], unknown>) => { console.log(JSON.stringify(data)); return data})
+    })
+  .catch((err) => {
+    console.log(err)
+    let result: ResponseDataType<IAdmin, unknown>
+  })
+}
