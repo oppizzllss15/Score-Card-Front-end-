@@ -1,6 +1,8 @@
 import { IAdmin, IAdminWithStack, IStack } from "../typings";
 import sweetAlert from 'sweetalert2';
 
+const token = localStorage.getItem("token");
+  
 export function presentAlert(title: string = "", text: string = "", callback: Function = console.log, ...args: any){
 
         return sweetAlert.fire({
@@ -20,7 +22,11 @@ export interface ResponseDataType<T,U>{data: T, message?: U}
 export function getAdmins(): Promise< ResponseDataType<IAdmin[], unknown>> {
   return fetch(`${url}/superadmin//all/admin`, {
     method: "GET",
-    headers: {"Accept": "application/json","Content-Type": "application/json"},
+    headers: {
+      "Accept": "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+    },
   })
   .then((res: any) => {
      return res.json().then((data: ResponseDataType<IAdmin[], unknown>) => { return data})
@@ -37,7 +43,8 @@ export function updateAdminActivationStatus(status: string, adminId: string): Pr
     method: "PUT",
     headers: {
       "Accept": "application/json",
-      "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
     
     },
   })
