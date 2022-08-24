@@ -28,7 +28,7 @@ const TableList = ({ week }: Week) => {
   }, []);
   return (
     <tbody>
-      {list.map((el, ind) => (
+      {list.map((el: Devs, ind) => (
       <tr>
         <th>{ind + 1}</th>
         <th>{el.Firstname}</th>
