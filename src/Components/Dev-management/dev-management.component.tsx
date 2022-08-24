@@ -43,7 +43,7 @@ export default function Devs({
   const [updateCall, setUpdateCall] = useState(false);
   const [formData, setFormData] = useState(defaultFormField);
   const { firstname, lastname, phone, stack, squad } = formData;
-  const [uid] = useState(users.id)
+  const [uid] = useState(users.id);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -156,6 +156,7 @@ export default function Devs({
           )}
           {updateCall && (
             <div className="from">
+              <p className="top-text"></p>
               <form onSubmit={(e) => onSubmit(e)}>
                 <label className="newpassword" htmlFor="">
                   Firstname

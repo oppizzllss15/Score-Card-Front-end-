@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Devs from "../../components/Dev-management/dev-management.component";
 import { BackArrowIcon } from "../../assets/backArrowIcon";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   devManagement,
   activateDevAccount,
@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
 import "./User-management.css";
 
 interface UserType {
-  _id?: string;
+  id?: string;
   firstname?: string;
   lastname?: string;
   email?: string;
@@ -23,6 +23,7 @@ interface UserType {
 
 const DecadevManagement = () => {
   let [data, setData] = useState([]);
+  const history = useNavigate()
 
   const getDevs = async () => {
     try {
@@ -51,7 +52,7 @@ const DecadevManagement = () => {
           confirmButtonAriaLabel: "Thumbs up, great!",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     } else {
       setTimeout(() => {
         Swal.fire({
@@ -63,7 +64,7 @@ const DecadevManagement = () => {
           denyButtonText: "Try again",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     }
   };
 
@@ -81,7 +82,7 @@ const DecadevManagement = () => {
           confirmButtonAriaLabel: "Thumbs up, great!",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     } else {
       setTimeout(() => {
         Swal.fire({
@@ -93,7 +94,7 @@ const DecadevManagement = () => {
           denyButtonText: "Try again",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     }
   };
 
@@ -111,7 +112,7 @@ const DecadevManagement = () => {
           confirmButtonAriaLabel: "Thumbs up, great!",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     } else {
       setTimeout(() => {
         Swal.fire({
@@ -123,7 +124,7 @@ const DecadevManagement = () => {
           denyButtonText: "Try again",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     }
   };
 
@@ -156,7 +157,7 @@ const DecadevManagement = () => {
           confirmButtonAriaLabel: "Thumbs up, great!",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     } else {
       setTimeout(() => {
         Swal.fire({
@@ -168,7 +169,7 @@ const DecadevManagement = () => {
           denyButtonText: "Try again",
           confirmButtonColor: "#93d413",
         });
-      }, 1000);
+      }, 100);
     }
   };
 
@@ -176,10 +177,10 @@ const DecadevManagement = () => {
     <div className="outer-box">
       <div className="box-container">
         <div className="link-container">
-          <Link to="/login" className="link-box">
+          <button onClick={() => history(-1)} className="link-box">
             <BackArrowIcon className="back-arrow" />
             <p>Go back</p>
-          </Link>
+          </button>
         </div>
         <div className="devs-box">
           <h4>Decadevs</h4>
@@ -198,7 +199,7 @@ const DecadevManagement = () => {
             <tbody>
               {data.map((user: UserType) => (
                 <Devs
-                  key={user._id}
+                  key={user.id}
                   users={user}
                   activateUser={activateUser}
                   deactivateUser={deactivateUser}

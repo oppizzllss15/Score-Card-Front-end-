@@ -69,6 +69,14 @@
     box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
     text-align: left;
  }
+
+ .top-text {
+    font-size: 0.9rem;
+    border-bottom: 0px solid #e6e6e6;
+    padding: 17px 30px;
+    color: #7d95ba;
+ }
+
  .newpassword {
     margin-top: 20px;
     margin-bottom: 10px;
