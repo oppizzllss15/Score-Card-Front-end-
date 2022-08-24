@@ -47,54 +47,56 @@ function Login() {
   };
 
   return (
-    <>
-      <div className="loginBody">
-        <div className="first">
-          <div className="logo">
-            <img src="/assets/images/logo.png" alt="a logo" />
-            <p>Scorecard</p>
-          </div>
-          <p className="login-account">Login to your account</p>
+     <>
+        <div className="loginBody">
+           <div className="first">
+              <div className="logo">
+                 <img src="/assets/images/logo.png" alt="a logo" />
+                 <p>Scorecard</p>
+              </div>
+              <p className="login-account">Login to your account</p>
 
-          <form className="form" onSubmit={(e) => onSubmit(e)}>
-            <label className="fname">Email address</label>
-            <br />
-            <input
-              type="text"
-              id="fname"
-              name="email"
-              placeholder="Enter email address"
-              className="email"
-              value={formData.email}
-              onChange={(e) => handleChange(e)}
-            />
-            <br />
-            <label className="password-text">Password</label>
-            <br />
-            <input
-              type="text"
-              id="password"
-              name="password"
-              placeholder="Enter password"
-              className="password"
-              value={formData.password}
-              onChange={(e) => handleChange(e)}
-            />
-            <h5 className="forget">Forgot password?</h5>
-            <button className="login-button">Login</button>
-          </form>
-          <div className="signup">
-            <p>
-              Don't have an account? <a href="">Sign Up</a>
-            </p>
-          </div>
-        </div>
+              <form className="form" onSubmit={(e) => onSubmit(e)}>
+                 <label className="fname">Email address</label>
+                 <br />
+                 <input
+                    type="text"
+                    id="fname"
+                    name="email"
+                    placeholder="Enter email address"
+                    className="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange(e)}
+                    style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+                 />
+                 <br />
+                 <label className="password-text">Password</label>
+                 <br />
+                 <input
+                    type="text"
+                    id="password"
+                    name="password"
+                    placeholder="Enter password"
+                    className="password"
+                    value={formData.password}
+                    onChange={(e) => handleChange(e)}
+                    style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+                 />
+                 <h5 className="forget">Forgot password?</h5>
+                 <button className="login-button">Login</button>
+              </form>
+              <div className="signup">
+                 <p>
+                    Don't have an account? <a href="">Sign Up</a>
+                 </p>
+              </div>
+           </div>
 
-        <div className="second">
-          <img src="/assets/images/img1.png" alt="man with laptop" />
+           <div className="second">
+              <img src="/assets/images/img1.png" alt="man with laptop" />
+           </div>
         </div>
-      </div>
-    </>
+     </>
   );
 }
 
