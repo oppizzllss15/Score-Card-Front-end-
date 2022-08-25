@@ -15,6 +15,7 @@ const AdminManagement = () => {
   const [actionMessage, setActionMessage ] = useState('');
     
   const getAllAdmins = async () => {
+    console.log("yesssss")
     try {
       const resp = await getAdmins();
       if (resp.data) setData(resp.data);

@@ -20,12 +20,13 @@ const url = process.env.REACT_APP_BACKEND_URI;
 export interface ResponseDataType<T,U>{data: T, message?: U}
 
 export function getAdmins(): Promise< ResponseDataType<IAdminWithStack[], unknown>> {
-  return fetch(`${url}/superadmin//all/admin`, {
+  console.log("got here")
+  return fetch(`${url}/superadmin/all/admin`, {
     method: "GET",
     headers: {
       "Accept": "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`,
     },
   })
   .then((res: any) => {
@@ -36,6 +37,26 @@ export function getAdmins(): Promise< ResponseDataType<IAdminWithStack[], unknow
     let result: ResponseDataType<IAdmin, unknown>
   })
 }
+
+// export const getAdmins = async () => {
+//   let token = localStorage.getItem("token");
+//   try {
+//     const resp = await fetch(`${url}/superadmin/all/admin`, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+//     const res = await resp.json();
+
+//     alert(JSON.stringify(res))
+//     return {data: res.Admis};
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
 
 
 export function updateAdminActivationStatus(status: string, adminId: string): Promise< ResponseDataType<IAdmin, unknown>> {
