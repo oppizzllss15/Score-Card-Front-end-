@@ -12,8 +12,9 @@
 }
 .form-boxx{
    width: 44.5vw;
-   height: 822px;
+   height: 710px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   margin-bottom: 30px;
 }
 .headerCon{
     width: 44.5vw;
@@ -50,4 +51,9 @@
     font-size: 1.2rem;
     color: #21334F;
     font-weight: bold;
+}
+.page-header{
+   
+    margin-top: 3rem;
+    margin-left: 10rem;
 }

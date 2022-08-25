@@ -1,9 +1,9 @@
-
 import React, { ChangeEvent, useState } from "react";
 import { Selectoption } from "../../components/Selectoption";
 import { SignupButton } from "../../components/SignupButton";
 import { SimpleInput } from "../../components/SimpleInput";
 import { createUser } from "../../utils/api";
+import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
 import "./createuser.css";
 
 export const CreateUser = () => {
@@ -50,68 +50,70 @@ export const CreateUser = () => {
    };
 
    return (
-      <div>
-         <div className="headuser">
-            <div className="headerCon">
-               <p>Create User</p>
-               <button>View all user</button>
+      <DashboardLayout>
+         <div className="page-header">
+            <div className="headuser">
+               <div className="headerCon">
+                  <p>Create User</p>
+                  <button>View all user</button>
+               </div>
             </div>
-         </div>
-         <div className="box-user">
-            <div className="form-boxx">
-               <p className="userp">Fill in your required data</p>
-               <hr />
-               <div className="formuser">
-                  <form action="">
-                     <SimpleInput
-                        placeholder="Enter first name"
-                        name="firstname"
-                        label="First Name"
-                        type="text"
-                        value={firstname}
-                        onChange={handleChange}
-                     />
-                     <SimpleInput
-                        placeholder="Enter last name"
-                        name="lastname"
-                        label="Last Name"
-                        type="text"
-                        value={lastname}
-                        onChange={handleChange}
-                     />
-                     <SimpleInput
-                        placeholder="Enter your email"
-                        name="email"
-                        label="Email"
-                        type="email"
-                        value={email}
-                        onChange={handleChange}
-                     />
-                     <div>
-                        <label className="control-text">Stacks</label>
-                        <Selectoption
-                           label="stack"
-                           name="string"
-                           value="string"
-                           handleChange="any"
+            <div className="box-user">
+               <div className="form-boxx">
+                  <p className="userp">Fill in your required data</p>
+                  <hr />
+                  <div className="formuser">
+                     <form action="">
+                        <SimpleInput
+                           placeholder="Enter first name"
+                           name="firstname"
+                           label="First Name"
+                           type="text"
+                           value={firstname}
+                           onChange={handleChange}
                         />
-                     </div>
-                     <SimpleInput
-                        placeholder="Squad"
-                        name="squad"
-                        label="Squad"
-                        type="text"
-                        value={squad}
-                        onChange={handleChange}
-                     />
-                     <SignupButton
-                        name={loading ? "Loading" : "Create User"}
-                        handleSubmit={handleSubmit}
-                     />
-                  </form>
+                        <SimpleInput
+                           placeholder="Enter last name"
+                           name="lastname"
+                           label="Last Name"
+                           type="text"
+                           value={lastname}
+                           onChange={handleChange}
+                        />
+                        <SimpleInput
+                           placeholder="Enter your email"
+                           name="email"
+                           label="Email"
+                           type="email"
+                           value={email}
+                           onChange={handleChange}
+                        />
+                        <div>
+                           <label className="control-text">Stacks</label>
+                           <Selectoption
+                              label="stack"
+                              name="string"
+                              value="string"
+                              handleChange="any"
+                           />
+                        </div>
+                        <SimpleInput
+                           placeholder="Squad"
+                           name="squad"
+                           label="Squad"
+                           type="text"
+                           value={squad}
+                           onChange={handleChange}
+                        />
+                        <SignupButton
+                           name={loading ? "Loading" : "Create User"}
+                           handleSubmit={handleSubmit}
+                        />
+                     </form>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
+      </DashboardLayout>
    );
 };
