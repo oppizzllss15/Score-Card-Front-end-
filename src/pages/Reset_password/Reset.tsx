@@ -55,7 +55,7 @@ const Reset = () => {
         Swal.fire({
           icon: "info",
           title: "Error",
-          text: `${res.error}`,
+          text: `Something went wrong`,
           showDenyButton: true,
           denyButtonText: "Try again",
           confirmButtonColor: "#93d413",

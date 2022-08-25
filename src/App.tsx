@@ -17,8 +17,7 @@ import EmptyStack from "./pages/error-dashboard/Error";
 function App() {
    return (
       <Routes>
-         {/* <Route path="/forgot/password" element={<Forget />} />
-      <Route path="/reset-password/:id/:token" element={<Reset />} /> */}
+       
 
          <Route path="/signup" element={<Signup />} />
          <Route path="/login" element={<Login />} />
@@ -30,10 +29,6 @@ function App() {
          <Route path="/createadmin" element={<CreateAdmin />} />
          <Route path="/devmanagement" element={<DecadevManagement />} />
          <Route path="/weeklyperformance" element={<DevsWeeklyPerformance />} />
-
-         {/* <Route path="/dashboard/update-password" element={<Change/>} /> */}
-
-         {/* </Route> */}
       </Routes>
    );
 }
