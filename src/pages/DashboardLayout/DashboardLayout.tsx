@@ -62,7 +62,7 @@ export const DashboardLayout = () => {
                </div>
                <div className="content-part" style={{padding: "32px"}}>
                   
-             <Layout />
+             <Outlet />
 
                   
                </div>
