@@ -22,7 +22,11 @@ const Reset = () => {
   const submitPasswords = async (e: any) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      return Swal.fire("", "Passwords do not match");
+      return Swal.fire({
+        position: "top",
+        text: "Passwords do not match",
+        confirmButtonColor: "#93d413",
+      });
     }
 
     setNewPassword("");
