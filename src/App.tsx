@@ -17,23 +17,18 @@ import EmptyStack from "./pages/error-dashboard/Error";
 function App() {
    return (
       <Routes>
-         {/* <Route path="/forgot/password" element={<Forget />} />
-      <Route path="/reset-password/:id/:token" element={<Reset />} /> */}
+       
 
          <Route path="/signup" element={<Signup />} />
          <Route path="/login" element={<Login />} />
-         <Route path="/forget" element={<Forget />} />
-         <Route path="/reset" element={<Reset />} />
+         <Route path="/forgot/password" element={<Forget />} />
+         <Route path="/reset-password/:id/:token" element={<Reset />} />
          <Route path="/dashboard" element={<AdminDashboard />} />
          <Route path="/createuser" element={<CreateUser />} />
          <Route path="/change_password" element={<Change />} />
          <Route path="/createadmin" element={<CreateAdmin />} />
          <Route path="/devmanagement" element={<DecadevManagement />} />
          <Route path="/weeklyperformance" element={<DevsWeeklyPerformance />} />
-
-         {/* <Route path="/dashboard/update-password" element={<Change/>} /> */}
-
-         {/* </Route> */}
       </Routes>
    );
 }
