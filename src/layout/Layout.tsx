@@ -12,23 +12,3 @@ import DevsWeeklyPerformance from "../pages/DevsWeeklyPerformance/DevsWeeklyPerf
 
 
 
-export const Layout = () => {
-  return (
-
-     <Routes>
-       
-        <Route path="/" element={<Forget />} />
-        <Route path="/reset-password/:id/:token" element={<Reset />} />
-        <Route path="/update-password" element={<Change />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path = "/create-admin" element={<CreateAdmin />} />
-        <Route path = "/createuser" element={<CreateUser />} />
-        <Route
-        path="/devsweeklyperformance"
-        element={<DevsWeeklyPerformance />}
-      ></Route>
-     </Routes>
-  );
-}
-

@@ -7,10 +7,11 @@ import { Admin } from './pages/Admin-dashboard/Admin';
 import DevsWeeklyPerformance from "./pages/DevsWeeklyPerformance/DevsWeeklyPerformance";
 import {Login} from './pages/Login/Login';
 import { Signup } from "./pages/SignUp/Signup";
-import { DashboardLayout } from './pages/DashboardLayout/DashboardLayout';
 import DecadevManagement from "./pages/User_management/User-management";
 import { CreateUser } from "./pages/Create_user/Create_user";
 import {AdminManagement} from './pages/admin/AdminManagement'
+import { DashboardLayout } from "./Layout/DashboardLayout/DashboardLayout";
+
 
 
 
@@ -20,15 +21,30 @@ function App() {
     <Routes>
       <Route path="/forgot/password" element={<Forget />} />
       <Route path="/reset-password/:id/:token" element={<Reset />} />
-      <Route path="/dashboard" element={<DashboardLayout/>}/>
-      <Route path="/update-password" element={<Change/>} />
+
+      <Route path="/dashboard" element={<DashboardLayout/>}>
+           <Route index element={<DecadevManagement />} />
+           <Route path="/dashboard/manage_admins" element={<AdminManagement />} />       
+           <Route path="/dashboard/createuser" element={<CreateUser />} />
+           <Route path="/dashboard//stacks" element={<Admin />} />
+           <Route path="/dashboard/update-password" element={<Change/>} />
+
+     </Route>
+
+
+
+     
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/manage_admins" element={<AdminManagement />} />
-      <Route path="/all/devs" element={<DecadevManagement />} />
-      <Route path="/stacks" element={<Admin />} />
-      <Route path="/createuser" element={<CreateUser />} />
+    
+    
+    
+      
     </Routes>
+
+   
+       
+        
   )
 
 }

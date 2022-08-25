@@ -2,7 +2,7 @@ import { IAdmin, IAdminWithStack, IStack } from "../../typings";
 import React, {useState} from 'react';
 import { presentAlert, updateAdminData } from "../../utils/adminApi";
 import { text } from "node:stream/consumers";
-import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export interface EditProps{

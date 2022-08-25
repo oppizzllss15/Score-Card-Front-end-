@@ -1,5 +1,4 @@
 import React, { useState, useEffect, SetStateAction } from "react"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Button from 'react-bootstrap/Button';
 import Popover from 'react-bootstrap/Popover';

@@ -7,7 +7,7 @@ import { GrHomeRounded } from "react-icons/gr";
 import { BiUser } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import "./DashboardLayout.css";
-import { Layout } from "../../layout/Layout";
+
 
 export const DashboardLayout = () => {
    return (
@@ -62,7 +62,7 @@ export const DashboardLayout = () => {
                </div>
                <div className="content-part" style={{padding: "32px"}}>
                   
-             <Layout />
+             <Outlet />
 
                   
                </div>
