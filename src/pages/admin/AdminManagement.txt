@@ -1,16 +1,17 @@
 import React, { useState, useEffect, SetStateAction } from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Button from 'react-bootstrap/Button';
 import Popover from 'react-bootstrap/Popover';
 import './admin.css'
-import { IAdmin } from "../../typings"
+import { IAdmin, IAdminWithStack } from "../../typings"
 import { getAdmins, ResponseDataType, deleteAdminData, updateAdminData, updateAdminActivationStatus, presentAlert } from "../../utils/adminApi"
 import { EditAdmin } from "./AdminEdit";
 import sweetAlert from 'sweetalert2'
 import { stringify } from "querystring";
 
 export function AdminManagement(){
-    const [admins, setAdmins ] = useState([] as IAdmin[]);
+    const [admins, setAdmins ] = useState([] as IAdminWithStack[]);
     const [actionMessage, setActionMessage ] = useState('');
     
     useEffect(() => {

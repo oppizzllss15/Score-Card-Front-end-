@@ -19,7 +19,7 @@ const url = process.env.REACT_APP_BACKEND_URI;
 
 export interface ResponseDataType<T,U>{data: T, message?: U}
 
-export function getAdmins(): Promise< ResponseDataType<IAdmin[], unknown>> {
+export function getAdmins(): Promise< ResponseDataType<IAdminWithStack[], unknown>> {
   return fetch(`${url}/superadmin//all/admin`, {
     method: "GET",
     headers: {
@@ -29,7 +29,7 @@ export function getAdmins(): Promise< ResponseDataType<IAdmin[], unknown>> {
     },
   })
   .then((res: any) => {
-     return res.json().then((data: ResponseDataType<IAdmin[], unknown>) => { return data})
+     return res.json().then((data: ResponseDataType<IAdminWithStack[], unknown>) => { return data})
     })
   .catch((err) => {
     console.log(err)

@@ -24,8 +24,7 @@ export function EditAdmin(prop: EditProps){
             lastname: admin.lastname,
             stack: admin.stack as string,
             email: admin.email,
-            role: admin.role,
-            squad: admin.squad
+            role: admin.role
         }
 
         

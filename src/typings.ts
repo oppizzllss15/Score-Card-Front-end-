@@ -1,5 +1,6 @@
 export interface IAdmin {
   _id?: string;
+  id?: string;
   firstname?: string;
   lastname?: string;
   email?: string;
@@ -16,6 +17,7 @@ export interface IAdmin {
 
 export interface IAdminWithStack {
   _id?: string;
+  id?: string;
   firstname?: string;
   lastname?: string;
   email?: string;
@@ -25,7 +27,7 @@ export interface IAdminWithStack {
   stack: string,
   phone?: string;
   role?: string;
-  squad?: number;
+  squad?: string;
   activationStatus?: boolean;
 }
 

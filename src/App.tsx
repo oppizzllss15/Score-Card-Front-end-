@@ -9,7 +9,7 @@ import {Login} from './pages/Login/Login';
 import { Signup } from "./pages/SignUp/Signup";
 import DecadevManagement from "./pages/User_management/User-management";
 import { CreateUser } from "./pages/Create_user/Create_user";
-import {AdminManagement} from './pages/admin/AdminManagement'
+import AdminManagement from './pages/admin/Admin-management'
 import { DashboardLayout } from "./Layout/DashboardLayout/DashboardLayout";
 
 
