@@ -107,3 +107,61 @@ justify-content: space-between;
     font-weight: bold;
     padding-top: 40px;
 }
+.profilemodal{
+    position: absolute;
+    width: 23.813rem;
+    height: 20.375rem;
+    top: 8rem;
+    right: 6rem;
+     box-shadow: 5px 10px 180px 100rem rgba(0,0,0,0.4);
+    box-sizing: border-box;
+    background-color: white;
+    padding-top: 28px;
+    border-radius: 2px;
+    
+}
+
+.personpic{
+  padding-left: 2.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 13px;
+}
+
+.pimg{
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 16px;
+    width: 65px;
+    height: 65px;
+}
+.namework{
+    display: flex;
+    flex-direction: column;
+}
+.profilemodal hr{
+    background-color: rgb(214, 208, 208);
+    color: rgb(214, 208, 208) ;
+    margin-bottom: 2.3rem;
+}
+.personaction{
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+    color: #03435F;
+    font-weight: 300;
+    font-size: 16px;
+}
+.personaction p{
+    margin-left: 15px;
+}
+.pro{
+    display: flex;
+    margin-left: 2.3rem;
+    margin-bottom: 19px;
+}
+.pro :hover{
+  font-weight: 600;
+}
