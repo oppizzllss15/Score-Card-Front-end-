@@ -188,3 +188,8 @@
 .children-position{
    margin-left: 15rem;
 }
+.profile{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
