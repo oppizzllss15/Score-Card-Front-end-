@@ -9,28 +9,29 @@ export const SideBar = () => {
     <div className="sidebar">
       <div className="content-link">
         <Link to="/dashboard">
-          <div className="dash_icon">
+          <div className="dash_icon" id="1">
             <GrHomeRounded /> <p>Dashboard</p>
           </div>
         </Link>
         <Link to="/createuser">
-          <div className="dash_icon">
+          <div className="dash_icon" id="2">
             <BiUser /> <p>User Management</p>
           </div>
         </Link>
         <Link to="/createadmin">
-          <div className="dash_icon">
-            <AiOutlineUserAdd />{" "}
-            <p>Admin Management</p>
+          <div className="dash_icon" id="3">
+            <AiOutlineUserAdd /> <p>Admin Management</p>
           </div>
         </Link>
       </div>
 
       <div className="bottom">
-        <div className="logout">
-          <TbArrowBarRight />
-          <p>Logout</p>
-        </div>
+        <Link to="/login">
+          <div className="logout">
+            <TbArrowBarRight />
+            <p>Logout</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
