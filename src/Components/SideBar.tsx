@@ -20,7 +20,8 @@ export const SideBar = () => {
         </Link>
         <Link to="/createadmin">
           <div className="dash_icon">
-            <AiOutlineUserAdd /> <p>Admin Management</p>
+            <AiOutlineUserAdd />{" "}
+            <p>Admin Management</p>
           </div>
         </Link>
       </div>
