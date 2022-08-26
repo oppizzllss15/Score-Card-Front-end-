@@ -2,6 +2,7 @@
    display: flex;
    justify-content: center;
    margin-top: 60px;
+   background: #ffffff;
 }
 .change_word {
    font-weight: 600;
@@ -27,6 +28,7 @@
    font-weight: 300;
    font-size: 1rem;
    margin-top: 10vh;
+   background: #ffffff;
    
 }
 .newpassword {

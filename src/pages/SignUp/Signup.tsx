@@ -90,7 +90,7 @@ export const Signup = () => {
   };
 
   return (
-     <div>
+     <div className="signup-body">
         <div className="change">
            <div className="first">
               <div className="logo">

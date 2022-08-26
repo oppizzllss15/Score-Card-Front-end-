@@ -1,17 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .outer-box {
   min-height: 90vh;
   margin: 0 3.1rem;
-  width: 70vw;
+  width: 73vw;
+  /* background-position: center;
+  background-size: cover; */
   padding: 2.8rem;
-  box-sizing: border-box;
+  background-color: #e5e5e5;
 }
 
-.box-container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  background: #E5E5E5;
-}
 
 a {
   text-decoration: none;
@@ -56,6 +57,7 @@ a {
 }
 
 .devs-box {
+  display: inline-block;
   max-width: 8.688rem;
   min-height: 2.438rem;
 

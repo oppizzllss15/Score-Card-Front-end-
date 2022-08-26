@@ -1,14 +1,28 @@
+.dashboard-body {
+    background: #fff;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+}
+
 .each-stack{
     width: 305px;
     height: 216px;
     background-color: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 20px;
+    transition: all 0.33s;
 }
+
+.each-stack:hover {
+    transform: translateY(-7px);
+}
+
 .img-stack{
     height: 64px;
     width: 64px;
@@ -60,6 +74,11 @@ img{
     margin-right: 400px;
     width: 600px;  
 }
+
+.form {
+    margin-top: 0px;
+}
+
 @media screen and (max-width: 580px) {
     .stack-form{
         margin-left: 10px;

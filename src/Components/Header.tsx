@@ -1,4 +1,3 @@
-import React from 'react';
 import { Logo } from './Logo';
 import { FaSearch } from 'react-icons/fa';
 
