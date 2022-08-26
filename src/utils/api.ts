@@ -72,8 +72,8 @@ export const loginUser = async (email: string, password: string) => {
       body: JSON.stringify({ email, password }),
     });
     return resp.json();
-  } catch (err) {
-    console.log(err);
+  } catch (err: any) {
+    return err.json();
   }
 };
 

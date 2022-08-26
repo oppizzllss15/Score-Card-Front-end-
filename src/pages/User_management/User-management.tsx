@@ -11,6 +11,7 @@ import {
 } from "../../utils/api";
 import Swal from "sweetalert2";
 import "./User-management.css";
+import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
 
 interface UserType {
   id: string;
@@ -182,46 +183,48 @@ const DecadevManagement = () => {
   };
 
   return (
-    <div className="outer-box">
-      <div className="box-container">
-        <div className="link-container">
-          <button onClick={() => history(-1)} className="link-box">
-            <BackArrowIcon className="back-arrow" />
-            <p>Go back</p>
-          </button>
+     <DashboardLayout>
+        <div className="outer-box">
+           <div className="box-container">
+              <div className="link-container">
+                 <button onClick={() => history(-1)} className="link-box">
+                    <BackArrowIcon className="back-arrow" />
+                    <p>Go back</p>
+                 </button>
+              </div>
+              <div className="devs-box">
+                 <h4>Decadevs</h4>
+              </div>
+              <div>
+                 <table className="table-container">
+                    <thead className="table-header">
+                       <tr>
+                          <th>Full Name</th>
+                          <th>Email</th>
+                          <th>Stack</th>
+                          <th>Squad</th>
+                          <th>Action</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                       {data.map((user: UserType) => (
+                          <Devs
+                             key={user.id}
+                             users={user}
+                             activateUser={activateUser}
+                             deactivateUser={deactivateUser}
+                             deleteUser={deleteUser}
+                             updateUserAcct={updateUserAcct}
+                             setActive={setActive}
+                             selectedItem={item}
+                          />
+                       ))}
+                    </tbody>
+                 </table>
+              </div>
+           </div>
         </div>
-        <div className="devs-box">
-          <h4>Decadevs</h4>
-        </div>
-        <div>
-          <table className="table-container">
-            <thead className="table-header">
-              <tr>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Stack</th>
-                <th>Squad</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((user: UserType) => (
-                <Devs
-                  key={user.id}
-                  users={user}
-                  activateUser={activateUser}
-                  deactivateUser={deactivateUser}
-                  deleteUser={deleteUser}
-                  updateUserAcct={updateUserAcct}
-                  setActive={setActive}
-                  selectedItem= {item}
-                />
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+     </DashboardLayout>
   );
 };
 

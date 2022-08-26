@@ -1,72 +1,29 @@
+import React, { Fragment, ReactNode } from "react";
 import { Outlet } from "react-router-dom";
-import React, { Fragment } from "react";
 import { Logo } from "../../components/Logo";
 import { FaSearch } from "react-icons/fa";
 import { TbArrowBarRight } from "react-icons/tb";
 import { GrHomeRounded } from "react-icons/gr";
 import { BiUser } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { Header } from "../../components/Header";
+import { SideBar } from "../../components/SideBar";
 import "./DashboardLayout.css";
 
+interface RNode {
+   children: ReactNode;
+}
 
-export const DashboardLayout = () => {
+export const DashboardLayout = ({ children }: RNode) => {
    return (
-      <div>
-         <div className="dash">
-            <div className="navbar">
-               <div className="logo">
-                  <Logo />
-               </div>
-
-               <div className="search">
-                  <div className="sea">
-                     <FaSearch />
-                     <input
-                        type="text"
-                        placeholder="Search"
-                        className="seaIn"
-                     />
-                  </div>
-               </div>
-
-               <div className="profile">
-                  <div className="image"></div>
-                  <div className="name">
-                     <p>Cherish</p>
-                  </div>
-               </div>
+      <div className="dash">
+         <Header />
+         <div className="layout-flex">
+            <div className="sidebar-position">
+             
+               <SideBar />
             </div>
-
-            <div className="content">
-               <div className="sidebar">
-                  <div className="content-link">
-                     <div className="dash_icon">
-                        <GrHomeRounded /> <p>Dashbord</p>
-                     </div>
-
-                     <div className="dash_icon">
-                        <BiUser /> <p>User Mangement</p>
-                     </div>
-
-                     <div className="dash_icon">
-                        <AiOutlineUserAdd /> <p>Admin Mangement</p>
-                     </div>
-                  </div>
-
-                  <div className="bottom">
-                     <div className="logout">
-                        <TbArrowBarRight />
-                        <p>Logout</p>
-                     </div>
-                  </div>
-               </div>
-               <div className="content-part" style={{padding: "32px"}}>
-                  
-             <Outlet />
-
-                  
-               </div>
-            </div>
+            <div className="children-position">{children}</div>
          </div>
       </div>
    );

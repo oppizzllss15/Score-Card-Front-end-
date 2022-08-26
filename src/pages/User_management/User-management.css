@@ -1,7 +1,7 @@
 .outer-box {
-  min-height: 100vh;
-  min-width: 100vw;
-  background: #E5E5E5;
+  min-height: 90vh;
+  margin: 0 3.1rem;
+  width: 70vw;
   padding: 2.8rem;
   box-sizing: border-box;
 }
@@ -56,8 +56,8 @@ a {
 }
 
 .devs-box {
-  width: 8.688rem;
-  height: 2.438rem;
+  max-width: 8.688rem;
+  min-height: 2.438rem;
 
   font-family: "Inter";
   font-style: normal;
@@ -70,10 +70,10 @@ a {
 }
 
 .table-container {
-  margin-top: 5.5rem;
+  margin: 5.5rem 0;
   box-sizing: border-box;
   position: absolute;
-  width: 80%;
+  width: 70%;
   background: #ffffff;
   text-align: left;
   border-collapse: collapse;

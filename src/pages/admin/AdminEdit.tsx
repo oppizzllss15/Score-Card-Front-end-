@@ -6,11 +6,11 @@ import { text } from "node:stream/consumers";
 
 
 export interface EditProps{
-    admin: IAdmin,
+    admin: IAdminWithStack,
     stacks?: IStack[]
 }
 export function EditAdmin(prop: EditProps){
-    const [admin, setAdmin] = useState({...prop.admin, stack: prop.admin.stack[0]._id})
+    const [admin, setAdmin] = useState({...prop.admin, stack: prop.admin.stack})
     
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>){
         const name = e.target.name;

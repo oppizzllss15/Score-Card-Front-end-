@@ -23,13 +23,19 @@
  .headerCon button{
     color: #14A800; 
     border: 1px solid #14A800;
-    padding: 10px 24px;
     border-radius: 4px;
-    width: 104px;
+    width: 154px;
     background-color: rgb(252, 252, 252);
     font-size: 14px;
     font-family: 'inter'
  }
+
+.headerCon button:hover{
+    background-color:  #14A800; 
+    color: white;
+    border: 1px solid #14A800
+}
+
  .headerCon p{
      font-size: 30px;
      color: #03435F;
@@ -46,4 +52,7 @@
  }
  .form-boxx hr{
       color: #BDBDBD; 
+ }
+ .admin-container{
+     margin: 3rem 14rem;
  }

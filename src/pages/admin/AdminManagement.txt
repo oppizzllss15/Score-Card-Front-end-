@@ -1,15 +1,15 @@
 //React.EventHandler<HTMLInputElemet>
 import React, { useState, useEffect, SetStateAction } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Button from 'react-bootstrap/Button';
 import Popover from 'react-bootstrap/Popover';
 import './admin.css'
+
 import { IAdmin, IAdminWithStack } from "../../typings"
 import { getAdmins, ResponseDataType, deleteAdminData, updateAdminData, updateAdminActivationStatus, presentAlert } from "../../utils/adminApi"
 import { EditAdmin } from "./AdminEdit";
-import sweetAlert from 'sweetalert2'
-import { stringify } from "querystring";
 
 export function AdminManagement(){
     const [admins, setAdmins ] = useState([] as IAdminWithStack[]);
@@ -94,12 +94,11 @@ export function AdminManagement(){
                                         <td>{admin.firstname}, {admin.lastname} </td>
                                         <td>{admin.email}</td>
                                         <td>{ admin.role} </td>
-                                        <td> { admin.stack.map((stack) =>  (stack.name) )} </td>
                                         <td>{`SQ0${admin.squad}`}</td>
                                         <td>
                                             <OverlayTrigger trigger="click" rootClose placement="left" overlay={(
                                                 <Popover id={`sp${admin._id}`} style={{minWidth: 300}} >
-                                                    <Popover.Body>
+                                                    <Popover.Content>
                                                         <div className="row popover-container">
                                                         <div className="btn popover-btn" onClick={()=> { triggerEditModal(`${admin._id}`) }}> Edit </div>
                                                         {
@@ -110,7 +109,7 @@ export function AdminManagement(){
                                                         
                                                         <div className="btn popover-btn"onClick={()=> {deleteAdmin( `${admin._id}`, `${admin.firstname}`)}}> Delete </div>
                                                         </div>
-                                                    </Popover.Body>
+                                                    </Popover.Content>
                                                 </Popover>
                                             )}>
                                                 <Button variant="succes">
@@ -167,7 +166,6 @@ export function AdminManagement(){
             
              
         </div>
-
 
        
     )

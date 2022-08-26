@@ -7,6 +7,7 @@ import { getAdmins, ResponseDataType, deleteAdminData, updateAdminData, updateAd
 import "../User_management/User-management.css";
 
 import { IAdmin, IAdminWithStack } from "../../typings";
+
 const AdminManagement = () => {
   const [data, setData] = useState([] as IAdminWithStack[]);
   const [item, setItem] = useState("");
