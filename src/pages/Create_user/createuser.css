@@ -11,6 +11,7 @@
     margin-top: 0px !important;
 }
 .form-boxx{
+    background: #fff;
    width: 44.5vw;
    height: 710px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -55,5 +56,5 @@
 .page-header{
    
     margin-top: 3rem;
-    margin-left: 10rem;
+    margin-left: 14rem;
 }

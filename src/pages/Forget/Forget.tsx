@@ -35,7 +35,7 @@ export const Forget = () => {
   };
 
   return (
-     <div>
+     <div className="forgot-body">
         <div className="change">
            <div className="first">
               <div className="logo">

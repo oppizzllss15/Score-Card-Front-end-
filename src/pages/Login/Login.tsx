@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { SimpleInput } from "../../components/SimpleInput";
 import Swal from "sweetalert2";
 import { loginUser } from "../../utils/api";
 import "./Login.css";
@@ -77,6 +78,14 @@ function Login() {
                      value={formData.email}
                      onChange={(e) => handleChange(e)}
                   />
+                  {/* <SimpleInput
+                    name="email"
+                    label="Email address"
+                    type="text"
+                    value={formData.email}
+                    placeholder="Enter email address"
+                    onChange={(e) => handleChange(e)}
+                 /> */}
                   <br />
                   <label className="password-text">Password</label>
                   <br />

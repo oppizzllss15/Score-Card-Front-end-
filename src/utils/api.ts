@@ -1,6 +1,3 @@
-
-
-import { IAdmin, IStack } from "../typings";
 const url = process.env.REACT_APP_BACKEND_URI;
 
 export const sendResetLink = async (email: string) => {
@@ -210,7 +207,6 @@ export const getAllStack = async () => {
             Authorization: `Bearer ${token}`,
          },
       });
-      console.log(resp);
       return resp.json();
    } catch (error) {
       console.log(error);
@@ -222,7 +218,7 @@ export const createUser = async (
    firstname: string,
    lastname: string,
    email: string,
-   squad: string,
+   squad: number,
    stack: string
 ) => {
    let token = localStorage.getItem("token");
@@ -254,4 +250,81 @@ export const filterDevsPerformanceByWeek = async (id: string | number) => {
   } catch (err) {
     return[]
   }
+};
+
+export const createNewStack = async (name: string, file: any) => {
+  let token = localStorage.getItem("token");
+   try {
+      const resp = await fetch(`${url}/superadmin/createstack`, {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          name, file
+        })
+      });
+      return resp.json();
+   } catch (error) {
+     console.log(error);
+   }
+};
+
+export const createNewAdmin = async (
+  firstname: string,
+  lastname: string,
+  email: string,
+  squad: number,
+  stack: string,
+  role: string) => {
+  let token = localStorage.getItem("token");
+   try {
+      const resp = await fetch(`${url}/superadmin/admin/create`, {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          squad,
+          stack,
+          role
+        })
+      });
+      return resp.json();
+   } catch (error) {
+     console.log(error);
+   }
+};
+
+export const createNewUser = async (
+  firstname: string,
+  lastname: string,
+  email: string,
+  squad: string,
+  stack: string) => {
+  let token = localStorage.getItem("token");
+   try {
+      const resp = await fetch(`${url}/superadmin/user/create`, {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          squad,
+          stack,
+        })
+      });
+      return resp.json();
+   } catch (error) {
+     console.log(error);
+   }
 };
