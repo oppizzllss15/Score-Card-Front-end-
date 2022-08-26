@@ -5,8 +5,8 @@ type Words = {
   name?: string;
   label?: string;
   placeholder?: string;
-  type?: string;
-  value?: string;
+  type?: any;
+  value?: any;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 

@@ -7,7 +7,7 @@
 }
 .profile_img_div{
     text-align: center;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 .form-group{
     margin-top: 2em;
@@ -28,10 +28,10 @@
 }
 
 .profile_img_div{
-    border-radius: 50px;
+    border-radius: 50%;
     border: gray solid 1px;
-    margin: 5px;
-    padding: 50px 1px;
+    margin: 2rem;
+    padding: 20px 1px;
 }
 
 .row{
@@ -39,4 +39,8 @@
     justify-content: space-evenly;
     background-color: white;
 
+}
+.submit-btn{
+    background-color: blue;
+    color: white;
 }

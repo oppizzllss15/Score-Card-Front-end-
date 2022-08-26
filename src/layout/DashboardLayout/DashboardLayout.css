@@ -28,7 +28,7 @@
    margin-right: 10px;
 }
 .seaIn {
-   width: 80%;
+   width: 70%;
    height: 48px;
    border: none;
    font-size: 18px;
@@ -58,7 +58,7 @@
 .search {
    flex: 6;
    margin-right: 50px;
-   width: 752px;
+   width: 40rem;
 }
 
 .sidebar {
@@ -122,11 +122,23 @@
    height: 32px;
    color: #21334f;
    padding: auto;
-   margin-bottom: 15px;
+   margin-bottom: 23px;
    font-size: 1.2rem;
+   transition: all 0.2s;
 }
+
+.dash_icon:hover { 
+   background: #14A800;
+   color: #fff;
+   height: 2.8rem;
+   padding: 0.5rem;
+   border-radius: 4px;
+   opacity: 0.8;
+}
+
 .dash_icon p {
    margin-left: 10px;
+   font-size: 18px;
 }
 
 .box-user,
@@ -137,7 +149,7 @@
 }
 .headuser {
    font-weight: 600;
-   font-size: 1.9rem;
+   font-size: 1.8rem;
    color: #21334f;
    text-align: center;
    margin-top: 0px !important;
@@ -187,4 +199,9 @@
 }
 .children-position{
    margin-left: 15rem;
+}
+.profile{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }

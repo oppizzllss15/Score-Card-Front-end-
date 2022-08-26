@@ -1,22 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import { IAdmin } from '../../typings';
+import { IAdmin, IAdminWithStack } from '../../typings';
 import { getAdminData, presentAlert, updateAdminData, uploadAdminProfilePicture } from '../../utils/adminApi';
 import './admin.css'
-export function AdminProfile(prop: {id: string}){
+export function AdminProfile(prop: {id?: string}){
 
-    const [adminData, setAdminData] = useState({} as IAdmin);
+    const [adminData, setAdminData] = useState({} as IAdmin | IAdminWithStack);
     const [outputMessage, setOutputMessage] = useState("");
 
     const params =  useParams();
         
     useEffect(()=> {
-        let adminiD = params ? params.id : prop.id;
+        let adminiD = params.id;
         //alert(adminiD + " the id")
         getAdminData(adminiD as string).then((res) => { 
-            setAdminData(res.data)
+            const stacked = {...res.data, ["stack"]: res.data.stack[0].name}
+            setAdminData(stacked as IAdminWithStack)
         })
     }, [outputMessage])
+    
     
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>){
         const name = e.target.name;
@@ -28,6 +30,7 @@ export function AdminProfile(prop: {id: string}){
     function handleSubmit(){
         presentAlert("Save Update", 'please confirm', console.log, "confirm update").then(() => {
             updateAdminData(adminData, adminData._id as string).then((res) => {
+                alert(JSON.stringify(res))
                 presentAlert("Update Done", 'please confirm', console.log, "Done").then(() => {})
                 setOutputMessage("done updating info")
             })
@@ -52,7 +55,7 @@ export function AdminProfile(prop: {id: string}){
         if(file){
             const formData = new FormData()
             formData.append("profile_img", file);
-            uploadAdminProfilePicture(adminData._id as string, formData).then((rss) => {
+            uploadAdminProfilePicture(adminData._id as string, formData).then((res) => {
                 presentAlert("done", "successfully uploaded", console.log, "done uploading").then(() => {
                     setOutputMessage("Done profile upload");
                 })
@@ -63,14 +66,6 @@ export function AdminProfile(prop: {id: string}){
 
     return (
         <>
-            <div className='header'>
-                <div className='col-sm-4'></div>
-                <div className='col-sm-4'>
-
-                </div>
-                <div className='col-sm-4'></div>
-            </div>
-               
              <div className='row'>
                  <div className='col-sm-4'></div>
                  <div className='col-sm-4'>
@@ -82,7 +77,7 @@ export function AdminProfile(prop: {id: string}){
                                 <img src={adminData.profile_img} className="profile_image" onClick={toggleImagePicker}/>
                             </div>
                         ): (
-                            <div><i className='fa fa-user profile_image'onClick={toggleImagePicker} ></i> </div>
+                            <div><i className='fa fa-image profile_image'onClick={toggleImagePicker} ></i> </div>
                         )}
                     </div>
                     <h4>{`${adminData.firstname}, ${adminData.lastname} `}</h4>

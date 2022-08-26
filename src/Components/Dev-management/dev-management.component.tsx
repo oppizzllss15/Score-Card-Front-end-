@@ -1,4 +1,5 @@
 import { useState, Fragment } from "react";
+import { CgClose } from "react-icons/cg";
 import Swal from "sweetalert2";
 import "./dev.management.css";
 
@@ -141,22 +142,38 @@ export default function Devs({
           {isActive && users.id === selectedItem ? (
             <div className="dropdown-content">
               <div className="dropdown-item">
-                <button name={users.id} onClick={handleEdit}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={handleEdit}
+                >
                   Edit
                 </button>
               </div>
               <div className="dropdown-item">
-                <button name={users.id} onClick={handleActivate}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={handleActivate}
+                >
                   Activate
                 </button>
               </div>
               <div className="dropdown-item">
-                <button name={users.id} onClick={handleDeactivate}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={handleDeactivate}
+                >
                   Deactivate
                 </button>
               </div>
               <div className="dropdown-item">
-                <button name={users.id} onClick={handleDelete}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={handleDelete}
+                >
                   Delete
                 </button>
               </div>
@@ -164,7 +181,11 @@ export default function Devs({
           ) : null}
           {updateCall && (
             <div className="from">
-              <p className="top-text">Update User Details</p>
+              <div className="form-header">
+                {/* <p className="top-text">User Details</p> */}
+                <button onClick={handleEdit} className="top-text-btn"><CgClose /></button>
+              </div>
+
               <form onSubmit={(e) => onSubmit(e)}>
                 <label className="newpassword" htmlFor="">
                   Firstname

@@ -1,11 +1,4 @@
-import React, { Fragment, ReactNode } from "react";
-import { Outlet } from "react-router-dom";
-import { Logo } from "../../components/Logo";
-import { FaSearch } from "react-icons/fa";
-import { TbArrowBarRight } from "react-icons/tb";
-import { GrHomeRounded } from "react-icons/gr";
-import { BiUser } from "react-icons/bi";
-import { AiOutlineUserAdd } from "react-icons/ai";
+import React, { ReactNode } from "react";
 import { Header } from "../../components/Header";
 import { SideBar } from "../../components/SideBar";
 import "./DashboardLayout.css";

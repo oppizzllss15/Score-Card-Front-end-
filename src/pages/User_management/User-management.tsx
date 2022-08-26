@@ -185,7 +185,7 @@ const DecadevManagement = () => {
   return (
      <DashboardLayout>
         <div className="outer-box">
-           <div className="box-container">
+           {/* <div className="box-container"> */}
               <div className="link-container">
                  <button onClick={() => history(-1)} className="link-box">
                     <BackArrowIcon className="back-arrow" />
@@ -222,7 +222,7 @@ const DecadevManagement = () => {
                     </tbody>
                  </table>
               </div>
-           </div>
+           {/* </div> */}
         </div>
      </DashboardLayout>
   );
