@@ -1,16 +1,16 @@
 import { IAdmin, IAdminWithStack, IStack } from "../../typings";
-import React, {useState} from 'react';
+import React, {  useState} from 'react';
 import { presentAlert, updateAdminData } from "../../utils/adminApi";
 import { text } from "node:stream/consumers";
 //import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export interface EditProps{
-    admin: IAdmin,
+    admin: IAdminWithStack,
     stacks?: IStack[]
 }
 export function EditAdmin(prop: EditProps){
-    const [admin, setAdmin] = useState({...prop.admin, stack: prop.admin.stack[0]._id})
+    const [admin, setAdmin] = useState({...prop.admin, stack: prop.admin.stack})
     
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>){
         const name = e.target.name;
@@ -24,8 +24,7 @@ export function EditAdmin(prop: EditProps){
             lastname: admin.lastname,
             stack: admin.stack as string,
             email: admin.email,
-            role: admin.role,
-            squad: admin.squad
+            role: admin.role
         }
 
         

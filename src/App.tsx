@@ -8,9 +8,10 @@ import { Login } from "./pages/Login/Login";
 import { Signup } from "./pages/SignUp/Signup";
 import DecadevManagement from "./pages/User_management/User-management";
 import { CreateUser } from "./pages/Create_user/Create_user";
-// import { AdminManagement } from "./pages/Admin/AdminManagement";
 import { AdminDashboard } from "./pages/Admin-dashboard/Admindashboard";
 import CreateAdmin from "./pages/Create-admin/CreateAdmin";
+import {AdminProfile} from './pages/admin/AdminProfile'
+//import  AdminManagement  from "./pages/Admin/Admin-management";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
       <Route path="/createadmin" element={<CreateAdmin />} />
       <Route path="/devmanagement" element={<DecadevManagement />} />
       <Route path="/weeklyperformance" element={<DevsWeeklyPerformance />} />
+
+      {/* <Route path="/weeklyperformance" element={<AdminManagement />} /> */}
+      <Route path="/adminprofile/:id" element={<AdminProfile id="" />} />
+
     </Routes>
   );
 }
