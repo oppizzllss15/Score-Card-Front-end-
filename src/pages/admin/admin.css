@@ -5,10 +5,7 @@
 #profile_img{
     display: none;
 }
-.profile_img_div{
-    text-align: center;
-    font-size: 3rem;
-}
+
 .form-group{
     margin-top: 2em;
 }
@@ -29,18 +26,28 @@
 
 
 profile_img{
-    padding: 20px;
+    width: 100%;
+    height: auto;   
     border-radius: 50%;
     border: gray solid 1px;
-    margin: 2rem;
+}
+
+.profile_img_div{
+    text-align: center;
+    font-size: 3rem;
+    margin: 4rem;
 }
 
 .row{
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     background-color: white;
-
+    padding-bottom: 4rem;
+    
+    
 }
+
 .submit-btn{
     background-color: blue;
     color: white;

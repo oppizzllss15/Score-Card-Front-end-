@@ -5,7 +5,10 @@ import { getAdminData, presentAlert, updateAdminData, uploadAdminProfilePicture 
 import './admin.css'
 import { Selectoption } from '../../components/Selectoption';
 import '../../components/component.css'
+
 import { DashboardLayout } from '../../layout/DashboardLayout/DashboardLayout';
+
+
 export function AdminProfile(prop: {id?: string}){
 
     const [adminData, setAdminData] = useState({} as IAdmin | IAdminWithStack);
@@ -62,8 +65,6 @@ export function AdminProfile(prop: {id?: string}){
     }
 
     function handleUpload(e: React.ChangeEvent<HTMLInputElement>){
-        //handle upload
-        alert("got upload")
         let file = e.target.files ? e.target.files[0] : null;
         if(file){
             const formData = new FormData()
@@ -76,7 +77,7 @@ export function AdminProfile(prop: {id?: string}){
             }).catch((err) => {
                 
                 presentAlert("Bad request", "successfully uploaded", console.log, "done uploading").then(() => {})
-                alert(JSON.stringify(err) + "the error")
+                //alert(JSON.stringify(err) + "the error")
             })
             return;
         }
@@ -86,9 +87,9 @@ export function AdminProfile(prop: {id?: string}){
     }
 
     return (
-        <>
-             <div className='row'>
-                 <div className='col-sm-4'></div>
+        <DashboardLayout>
+             <div className='row page-header'>
+                 {/* <div className='col-sm-4'></div> */}
                  <div className='col-sm-4'>
                     <div className='header'>
                     <h1>Profile</h1>
@@ -149,8 +150,8 @@ export function AdminProfile(prop: {id?: string}){
                         </form>
                     </div>
                  </div>
-                 <div className='col-sm-4'></div>
+                 {/* <div className='col-sm-4'></div> */}
              </div>
-        </>
+        </DashboardLayout>
     )
 }

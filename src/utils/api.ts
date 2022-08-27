@@ -328,3 +328,19 @@ export const createNewUser = async (
      console.log(error);
    }
 };
+
+export const getUserScores = async (id: string) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/users/performance/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};

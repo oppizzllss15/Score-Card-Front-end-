@@ -149,11 +149,11 @@ export const uploadAdminProfilePicture = async (adminId: string, imgFormData: Fo
     });
     
     //const res = await resp.json();
-    alert(JSON.stringify(resp) + " response")
+    //alert(JSON.stringify(resp) + " response")
     return resp.json();
 
   } catch (err) {
-    alert(JSON.stringify(err) + "error in the fetch ")
+    //alert(JSON.stringify(err) + "error in the fetch ")
     console.log(err);
   }
 };
