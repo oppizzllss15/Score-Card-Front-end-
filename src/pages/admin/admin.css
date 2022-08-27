@@ -27,11 +27,12 @@
     margin: 2rem;
 }
 
-.profile_img_div{
+
+profile_img{
+    padding: 20px;
     border-radius: 50%;
     border: gray solid 1px;
     margin: 2rem;
-    padding: 20px 1px;
 }
 
 .row{

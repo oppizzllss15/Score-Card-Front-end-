@@ -116,7 +116,7 @@ export function deleteAdminData(adminId: string): Promise< ResponseDataType<bool
 
 export function getAdminData(adminId: string): Promise< ResponseDataType<IAdmin, string>> {
    //alert(`${url}/admin/me/:${adminId.replace(":", "")}`);
-  return fetch(`${url}/admin/me/${adminId}`, {
+  return fetch(`${url}/admin/profile/${adminId}`, {
     method: "GET",
     headers: {
       "Accept": "application/json",
@@ -141,14 +141,19 @@ export const uploadAdminProfilePicture = async (adminId: string, imgFormData: Fo
     const resp = await fetch(`${url}/admin/upload`, {
       method: "POST",
       headers: {
-        "Content-Type": "multipart/formdata",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: imgFormData,
-      credentials: "include"
+      body: JSON.stringify(imgFormData),
+    
     });
+    
+    //const res = await resp.json();
+    alert(JSON.stringify(resp) + " response")
     return resp.json();
+
   } catch (err) {
+    alert(JSON.stringify(err) + "error in the fetch ")
     console.log(err);
   }
 };
