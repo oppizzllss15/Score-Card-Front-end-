@@ -3,6 +3,7 @@ import Admin from "../../components/Admin-management/admin-management.component"
 import { BackArrowIcon } from "../../assets/backArrowIcon";
 import { useNavigate } from "react-router-dom";
 import { getAdmins, ResponseDataType, deleteAdminData, updateAdminData, updateAdminActivationStatus, presentAlert } from "../../utils/adminApi"
+import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
 
 import "../User_management/User-management.css";
 
@@ -18,7 +19,7 @@ const AdminManagement = () => {
   const getAllAdmins = async () => {
     console.log("yesssss")
     try {
-      const resp = await getAdmins();
+      const resp: any = await getAdmins();
       if (resp.data) setData(resp.data);
     } catch (err) {
       console.log(err);
@@ -91,6 +92,7 @@ const AdminManagement = () => {
     }
 
   return (
+    <DashboardLayout>
     <div className="outer-box">
       <div className="box-container">
         <div className="link-container">
@@ -131,6 +133,7 @@ const AdminManagement = () => {
         </div>
       </div>
     </div>
+    </DashboardLayout>
   );
 };
 

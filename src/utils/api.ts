@@ -243,8 +243,15 @@ export const createUser = async (
 };
 
 export const filterDevsPerformanceByWeek = async (id: string | number) => {
+  let token = localStorage.getItem("token");
   try {
-    const resp = await fetch(`${url}/getscores/${id}`);
+    const resp = await fetch(`${url}/superadmin/user/getscores/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      }
+    });
     return await resp.json();
   } catch (err) {
     return [];
