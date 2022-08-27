@@ -113,7 +113,7 @@ export const signUp = async (
 
 export const filterDevsPerformanceByWeek = async (id: string | number) => {
   try {
-    const resp = await fetch(`${url}/getscores/${id}`);
+    const resp = await fetch(`/${url}/admin/user/filterscores/${id}`);
     return await resp.json();
   } catch (err) {
     return[]

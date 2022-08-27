@@ -31,14 +31,14 @@ const TableList = ({ week }: Week) => {
       {list.map((el, ind) => (
       <tr>
         <th>{ind + 1}</th>
-        <th>{el.Firstname}</th>
+        {/* <th>{el.Firstname}</th>
         <th>{el.Lastname}</th>
         <th>{el.Algorithms}</th>
         <th>{el.Weekly_Task}</th>
         <th>{el.Assessment_Test}</th>
         <th>{el.Agile_Test}</th>
         <th>{el.Cummulative_Score}</th>
-        <th>{`***`}</th>
+        <th>{`***`}</th> */}
       </tr>
       ))}
     </tbody>
