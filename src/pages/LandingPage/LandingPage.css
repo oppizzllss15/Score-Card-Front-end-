@@ -1,0 +1,53 @@
+.landnavbar{
+    width: 100%;
+    height: 11.7vh;
+    padding: 1rem 9.375rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+}
+.navlist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navlist p{
+    font-size: 1rem;
+    margin-right: 1.875rem;
+    font-family: inter;
+    font-weight: normal;
+}
+.navlist p:hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: #14A800;
+}
+.navlist button{
+    background-color: #14A800;
+border-radius: 4px;
+padding: 0.625rem 1.781rem;
+border: none;
+color: white;
+}
+.navlist button:hover{
+    color: #14A800;
+    border: 1px solid #14A800;
+    background-color: rgb(235, 235, 235);
+    font-weight: bold;
+}
+@media (max-width: 950px) {
+    .navlist{
+        display: none;
+    }
+    .landnavbar{
+        padding: 20px;
+    }
+}
+.describeimg{
+    width: 100%;
+    height: 35.5rem;
+   background: linear-gradient(92.75deg, rgba(0, 0, 0, 0.6) 37.33%, rgba(0, 0, 0, 0.03) 77.73%), url("/Users/dec/Desktop/LiveProject/live-project-score-card-sq011a-group-1-frontend-scorecard-1/public/assets/images/landguy.png");
+     background-position: center top;
+}
