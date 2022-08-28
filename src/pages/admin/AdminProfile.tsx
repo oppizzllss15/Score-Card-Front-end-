@@ -68,7 +68,7 @@ export function AdminProfile(prop: {id?: string}){
         let file = e.target.files ? e.target.files[0] : null;
         if(file){
             const formData = new FormData()
-            formData.append("profile_img", file);
+            formData.append("file", file);
             uploadAdminProfilePicture(adminData._id as string, formData).then((res) => {
                 //alert(JSON.stringify(res))
                 presentAlert("done", "successfully uploaded", console.log, "done uploading").then(() => {
@@ -85,6 +85,8 @@ export function AdminProfile(prop: {id?: string}){
         
         
     }
+
+    
 
     return (
         <DashboardLayout>

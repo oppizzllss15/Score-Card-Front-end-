@@ -38,25 +38,6 @@ export function getAdmins(): Promise< ResponseDataType<IAdminWithStack[], unknow
   })
 }
 
-// export const getAdmins = async () => {
-//   let token = localStorage.getItem("token");
-//   try {
-//     const resp = await fetch(`${url}/superadmin/all/admin`, {
-//       method: "GET",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${token}`,
-//       },
-//     });
-//     const res = await resp.json();
-
-//     alert(JSON.stringify(res))
-//     return {data: res.Admis};
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
-
 
 
 export function updateAdminActivationStatus(status: string, adminId: string): Promise< ResponseDataType<IAdmin, unknown>> {
@@ -102,8 +83,10 @@ export function deleteAdminData(adminId: string): Promise< ResponseDataType<bool
     method: "DELETE",
     headers: {
       "Accept": "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
     },
+
   })
   .then((res: any) => {
      return res.json().then((data: ResponseDataType<boolean, string>) => { console.log(JSON.stringify(data)); return data})
@@ -141,7 +124,7 @@ export const uploadAdminProfilePicture = async (adminId: string, imgFormData: Fo
     const resp = await fetch(`${url}/admin/upload`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(imgFormData),
@@ -149,7 +132,8 @@ export const uploadAdminProfilePicture = async (adminId: string, imgFormData: Fo
     });
     
     //const res = await resp.json();
-    //alert(JSON.stringify(resp) + " response")
+    //alert(JSON.stringify(res) + " response")
+    
     return resp.json();
 
   } catch (err) {
