@@ -12,6 +12,7 @@ import { AdminDashboard } from "./pages/Admin-dashboard/Admindashboard";
 import CreateAdmin from "./pages/Create-admin/CreateAdmin";
 import {AdminProfile} from './pages/admin/AdminProfile'
 import AdminManagement from "./pages/admin/Admin-management";
+import UserDashboard from "./pages/User-dashboard/User-dashboard";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
 
       {/* <Route path="/weeklyperformance" element={<AdminManagement />} /> */}
       <Route path="/adminprofile/:id" element={<AdminProfile id="" />} />
+      <Route path="/userdashboard" element={<UserDashboard />} />
 
     </Routes>
   );

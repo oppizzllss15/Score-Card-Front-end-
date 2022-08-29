@@ -338,3 +338,37 @@ export const createNewUser = async (
     console.log(error);
   }
 };
+
+export const getScores = async () => {
+  let token = localStorage.getItem("token");
+  let id = localStorage.getItem("Id");
+  try {
+    const resp = await fetch(`${url}/users/getscores/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      }
+    });
+    return await resp.json();
+  } catch (err) {
+    return [];
+  }
+};
+
+export const getPercentChange = async () => {
+  let token = localStorage.getItem("token");
+  let id = localStorage.getItem("Id");
+  try {
+    const resp = await fetch(`${url}/users/score/tracker/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      }
+    });
+    return await resp.json();
+  } catch (err) {
+    return [];
+  }
+};
