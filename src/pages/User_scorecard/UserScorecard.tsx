@@ -7,7 +7,7 @@ import '../../components/component.css'
 import "../../components/Dev-management/dev.management.css";
 import '../User_management/User-management.css'
 import { presentAlert } from "../../utils/adminApi";
-
+import { UserDashboardLayout } from "../../layout/UserDashboard/UserDashboard";
 export function UserScorecard(){
 
     const userId = useParams().id;
@@ -18,7 +18,7 @@ export function UserScorecard(){
     const [userScores, setUserscores ] = useState([] as Grades[])
 
     useEffect(()=> {
-        getUserScores(userId as string).then((res) => {
+        getUserScores(userId as string).then((res: any) => {
             //alert(JSON.stringify(res.data.grades) + " result")
             setUserscores(res.data.grades);
             setLoadingState(false);
@@ -47,7 +47,7 @@ export function UserScorecard(){
     }
 
     return (
-        <DashboardLayout>
+        <UserDashboardLayout>
             <div>
                 <div className="">
                     <h1 className="scorecard-header-text">Scorecard</h1>
@@ -94,6 +94,6 @@ export function UserScorecard(){
                     </div>
                 </div>
             </div>
-        </DashboardLayout>
+        </UserDashboardLayout>
     )
 } 

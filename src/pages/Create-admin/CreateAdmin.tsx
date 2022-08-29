@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { SimpleInput } from "../../components/SimpleInput";
 import { SignupButton } from "../../components/SignupButton";
 import { Selectoption } from "../../components/Selectoption";
@@ -69,7 +70,7 @@ const CreateAdmin = () => {
         <div className="headuser">
           <div className="headerCon">
             <p>Create Admin</p>
-            <button>View all Admins</button>
+            <Link to="/adminmanagement"><button>View all Admins</button></Link>
           </div>
         </div>
         <div className="box-user">

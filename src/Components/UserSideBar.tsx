@@ -4,7 +4,8 @@ import { BiUser } from "react-icons/bi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { TbArrowBarRight } from "react-icons/tb";
 
-export const SideBar = () => {
+export const UserSideBar = () => {
+  const userid = localStorage.getItem("userid");
   return (
     <div className="sidebar">
       <div className="content-link">
@@ -15,12 +16,12 @@ export const SideBar = () => {
         </Link>
         <Link to="/createuser">
           <div className="dash_icon" id="2">
-            <BiUser /> <p>User Management</p>
+            <BiUser /> <p>Performance Report</p>
           </div>
         </Link>
-        <Link to="/createadmin">
+        <Link to = {`/scorecard/${userid}`}>
           <div className="dash_icon" id="3">
-            <AiOutlineUserAdd /> <p>Admin Management</p>
+            <AiOutlineUserAdd /> <p>Skill Evaluation</p>
           </div>
         </Link>
       </div>

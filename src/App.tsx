@@ -27,6 +27,7 @@ function App() {
       <Route path="/createadmin" element={<CreateAdmin />} />
       <Route path="/devmanagement" element={<DecadevManagement />} />
       <Route path="/weeklyperformance" element={<DevsWeeklyPerformance />} />
+      <Route path="/adminmanagement" element={<AdminManagement />} />
 
       <Route path="/adminmanagement" element={<AdminManagement />} />
       <Route path="/adminprofile/:id" element={<AdminProfile id="" />} />

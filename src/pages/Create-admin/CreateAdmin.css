@@ -19,6 +19,9 @@
      width: 44.5vw;
      display: flex;
      justify-content: space-between;
+     line-height: 17px;
+     font-size: 14px;
+     
  }
  .headerCon button{
     color: #14A800; 
