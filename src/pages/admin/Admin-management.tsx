@@ -45,7 +45,7 @@ const AdminManagement = () => {
 
   useEffect(() => {
     getAllAdmins();
-  }, []);
+  }, [actionMessage]);
 
   const activateUser = (status: string, adminId: string, adminName: string) => {
         const title = status === "deactivate" ? "Activate Admin" : "Deactivate Admin";
@@ -92,7 +92,7 @@ const AdminManagement = () => {
     setItem(id);
   };
 
-  const updateUserAcct = (admin: IAdminWithStack) => {
+  const updateAdmin = (id: string, admin: IAdminWithStack) => {
         let adminData: IAdminWithStack = {
             firstname: admin.firstname,
             lastname: admin.lastname,
@@ -104,8 +104,10 @@ const AdminManagement = () => {
         
         updateAdminData(adminData, `${admin._id}`).then((res) => {
             let text = res.data ? `${admin.firstname} updated`: `Unable to complete action; [${res.message}]`
+            
             presentAlert('Done', text, console.log, "success update");
-        })
+            setActionMessage(`${admin.firstname} updated successfully`);
+          })
     }
 
   return (
@@ -140,7 +142,7 @@ const AdminManagement = () => {
                   activateUser={activateUser}
                   deactivateUser={deactivateUser}
                   deleteUser={deleteUser}
-                  updateUserAcct={updateUserAcct}
+                  updateUserAcct={updateAdmin}
                   setActive={setActive}
                   selectedItem= {item}
                 />
