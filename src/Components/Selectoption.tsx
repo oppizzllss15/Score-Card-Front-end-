@@ -1,42 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { getallStack } from "../utils/api";
-// const Stacks = () => {
-//   const [loading, setLoading] = useState([])
-// };
-
+import { useEffect, useState } from "react";
+import { getAllStack } from "../utils/api";
 
 type Optiontype = {
    label: string;
+   name: string;
+   value: string;
+   handleChange?: any
 };
+
 interface Option {
+   _id: string;
    image: string;
-  name: string;
+   name: string;
 }
+
 export const Selectoption = (props: Optiontype) => {
    const [option, setOption] = useState([]);
-   const [stack, setStack] = useState("");
-   const handleChange = (event: any) => {
-      setStack(event.target.value);
-   };
+
+
    const getStacks = async () => {
-      const resp = await getallStack();
-      console.log(resp);
+      const resp = await getAllStack();
       setOption(resp.message.allStacks);
    };
+
    useEffect(() => {
       getStacks();
    }, []);
-   console.log(option);
+
    return (
       <div>
          <select
             className="select-container"
-            value={stack}
-            onChange={handleChange}
-            name="stack"
+            name={props.name}
+            onChange={props.handleChange}
          >
             {option.map((item: Option) => (
-               <option value={item.name}>{item.name}</option>
+               <option key={item._id} value={item._id}>{item.name}</option>
             ))}
          </select>
       </div>

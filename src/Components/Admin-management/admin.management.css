@@ -1,0 +1,131 @@
+.table-row {
+  text-align: center;
+  color: #21334f;
+  font-size: 16px;
+  line-height: 39px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+   border-bottom: 1px solid rgb(214, 213, 213);
+   position: relative;
+}
+
+.dropdown-btn {
+    padding: 0px;
+    border: none;
+    text-decoration: none;
+    font-size: 1.4rem;
+    height: 0.00rem;
+}
+
+.dropdown-content {
+    position: absolute;
+    width: 13rem;
+    top: 20%;
+    right: 16%;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
+    font-weight: 400;
+    text-align: left;
+    z-index: 1;
+}
+
+.dropdown .dropdown-content .dropdown-item {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dropdown {
+    background: #ffffff;
+    position: relative;
+    padding: 0.4rem 4rem 0.3rem 0.4rem;
+    color: #21334f;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 3px;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.dropdown .dropdown-content .dropdown-item  button:hover{
+    background: #f4f4f4;
+}
+
+.from {
+   width: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 60px;
+    font-weight: 300;
+    font-size: 1rem;
+    width: 25rem;
+    background: #fff;
+    box-shadow: 3px 3px 10px 68rem rgba(0,0,0,0.4);
+    text-align: left;
+   left: -600%;
+   top: -500%;
+ }
+
+ .top-text {
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgb(213, 211, 211);
+    /* padding: 17px 30px; */
+    color: #21334f;
+    text-align: center;
+    font-weight: 500;
+    font-size: 19px;
+ }
+
+ .newpassword {
+    margin-top: 20px;
+    margin-bottom: 10px;
+ }
+ 
+ .from input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 1rem;
+    color: #2c3f5f;
+    font-weight: 200;
+ }
+ 
+ .from input:focus {
+    border: 1px solid #50b051;
+    outline-color: #bbe6bc;
+ }
+ 
+ .btn_change {
+    width: 103%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(
+       60deg,
+       #50b051 0%,
+       #8ec649 51%,
+       #b3d144 100%
+    );
+    color: white;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 20px;
+ }
+ .btn_change:hover {
+    background-image: linear-gradient(
+       30deg,
+       #50b051 0%,
+       #8ec649 51%,
+       #b3d144 100%
+    );
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px;
+ }
