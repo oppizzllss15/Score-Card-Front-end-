@@ -14,6 +14,7 @@ import { AdminProfile } from "./pages/admin/AdminProfile";
 import AdminManagement from "./pages/admin/Admin-management";
 import UserDashboard from "./pages/User-dashboard/User-dashboard";
 import { LandingPage } from "./pages/LandingPage/LandingPage";
+import { UserScorecard } from "./pages/User_scorecard/UserScorecard";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route path="/adminmanagement" element={<AdminManagement />} />
       <Route path="/adminprofile/:id" element={<AdminProfile id="" />} />
       <Route path="/userdashboard" element={<UserDashboard />} />
+      <Route path="/scorecard/:id" element={<UserScorecard />} />
     </Routes>
   );
 }

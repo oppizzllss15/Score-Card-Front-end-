@@ -318,24 +318,40 @@ export const createNewUser = async (
   stack: string
 ) => {
   let token = localStorage.getItem("token");
+   try {
+      const resp = await fetch(`${url}/superadmin/user/create`, {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          squad,
+          stack,
+        })
+      });
+      return resp.json();
+   } catch (error) {
+     console.log(error);
+   }
+};
+
+export const getUserScores = async (id: string) => {
+  let token = localStorage.getItem("token");
   try {
-    const resp = await fetch(`${url}/superadmin/user/create`, {
-      method: "POST",
+    const resp = await fetch(`${url}/users/performance/${id}`, {
+      method: "GET",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        firstname,
-        lastname,
-        email,
-        squad,
-        stack,
-      }),
     });
     return resp.json();
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
   }
 };
 

@@ -2,7 +2,8 @@ import { useState, Fragment } from "react";
 import Swal from "sweetalert2";
 import "./admin.management.css";
 import {IAdmin, IAdminWithStack} from '../../typings'
-
+import { Selectoption } from '../Selectoption';
+import { presentAlert } from "../../utils/adminApi";
 interface Prop {
   
   users: IAdminWithStack;
@@ -36,9 +37,9 @@ export default function Admin({
 }: Prop) {
   const [isActive, setIsActive] = useState(false);
   const [updateCall, setUpdateCall] = useState(false);
-  const [formData, setFormData] = useState(defaultFormField);
+  const [formData, setFormData] = useState(users);
   const { firstname, lastname, phone, stack, squad } = formData;
-  const [uid] = useState(users.id);
+  const [uid] = useState(users._id);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -69,6 +70,7 @@ export default function Admin({
 
   const handleEdit = (e: any) => {
     e.preventDefault();
+
     if (updateCall) setUpdateCall(false);
     else setUpdateCall(true);
   };
@@ -96,8 +98,9 @@ export default function Admin({
     });
   };
 
-  const onSubmit = (e: any) => {
+  const updateData = (e: any) => {
     e.preventDefault();
+    
     updateUserAcct(
       uid,
       formData
@@ -152,7 +155,7 @@ export default function Admin({
           {updateCall && (
             <div className="from">
               <p className="top-text">Update User Details</p>
-              <form onSubmit={(e) => onSubmit(e)}>
+              <form onSubmit={(e) => updateData(e)}>
                 <label className="newpassword" htmlFor="">
                   Firstname
                 </label>
@@ -186,16 +189,16 @@ export default function Admin({
                   value={phone}
                 />
 
-                <label className="newpassword" htmlFor="">
-                  Stack
-                </label>
-                <input
-                  type="text"
-                  name="stack"
-                  placeholder={users.stack}
-                  onChange={(e) => handleChange(e)}
-                  value={stack}
+                <div>
+                <label className="control-text">Stacks</label>
+                <Selectoption
+                    label="stack"
+                    name="stack"
+                    value={users.stack as string}
+                    handleChange={handleChange}
                 />
+
+              </div>
 
                 <label className="newpassword" htmlFor="">
                   Squad
