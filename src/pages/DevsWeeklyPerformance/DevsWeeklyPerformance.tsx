@@ -1,17 +1,46 @@
-import { useEffect , useState} from "react";
+import { useEffect, useState } from "react";
+import { filterDevsPerformanceByWeek } from "../../utils/api";
 import "./devsweeklyperformance.css";
 import { AiOutlineCalendar } from "react-icons/ai";
 import TableList from "../../components/TableList";
 import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
 
-<AiOutlineCalendar />;
+
+
+type Devs = {
+  Sn?: number;
+  id: string;
+  firstname: string;
+  lastname: string;
+  week: [
+    {
+      week: number;
+      agile: number;
+      weekly_task: number;
+      assessment: number;
+      algorithm: number;
+      cummulative: number;
+    }
+  ];
+};
 
 const DevsWeeklyPerformance = () => {
-  const [week, setWeek] = useState(1);
-  return (
+  const [week, setWeek] = useState(0);
+  const [list, setList] = useState([]);
 
+  const filterPerformance = async () => {
+    const resp = await filterDevsPerformanceByWeek(week);
+    console.log(resp);
+    setList(resp.week);
+  };
+
+  useEffect(() => {
+    filterPerformance();
+  }, []);
+
+  return (
      <DashboardLayout>
-        <div className="main">
+        <div className="mainb">
            <div className="dashoard-container">
               <div className="dashboard-heading">
                  <h3 className="dashboard">Dashboard</h3>
@@ -25,7 +54,7 @@ const DevsWeeklyPerformance = () => {
                  </div>
                  <div className="table-heading">
                     <table>
-                       <thead>
+                       <thead className="table-header">
                           <tr>
                              <th className="th-text th-1">SN</th>
                              <th className="th-text th-2">Firstname</th>
@@ -38,14 +67,17 @@ const DevsWeeklyPerformance = () => {
                              <th className="th-text th-9">Action</th>
                           </tr>
                        </thead>
-                       <TableList week={week} />
+                       <tbody className="tb-text">
+                          {list.map((user: Devs, ind) => (
+                             <TableList  key={user.id} user={user} ind={ind} />
+                          ))}
+                       </tbody>
                     </table>
                  </div>
               </div>
            </div>
         </div>
-    </DashboardLayout>
-    
+     </DashboardLayout>
   );
 };
 
