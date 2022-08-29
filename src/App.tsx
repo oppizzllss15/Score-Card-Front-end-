@@ -10,13 +10,15 @@ import DecadevManagement from "./pages/User_management/User-management";
 import { CreateUser } from "./pages/Create_user/Create_user";
 import { AdminDashboard } from "./pages/Admin-dashboard/Admindashboard";
 import CreateAdmin from "./pages/Create-admin/CreateAdmin";
-import {AdminProfile} from './pages/admin/AdminProfile'
+import { AdminProfile } from "./pages/admin/AdminProfile";
 import AdminManagement from "./pages/admin/Admin-management";
 import UserDashboard from "./pages/User-dashboard/User-dashboard";
+import { LandingPage } from "./pages/LandingPage/LandingPage";
 
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot/password" element={<Forget />} />
@@ -28,11 +30,8 @@ function App() {
       <Route path="/devmanagement" element={<DecadevManagement />} />
       <Route path="/weeklyperformance" element={<DevsWeeklyPerformance />} />
       <Route path="/adminmanagement" element={<AdminManagement />} />
-
-      {/* <Route path="/weeklyperformance" element={<AdminManagement />} /> */}
       <Route path="/adminprofile/:id" element={<AdminProfile id="" />} />
       <Route path="/userdashboard" element={<UserDashboard />} />
-
     </Routes>
   );
 }
