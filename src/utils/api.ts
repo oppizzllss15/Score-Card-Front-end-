@@ -158,3 +158,36 @@ export const createUser = async (
      
    }
 };
+
+export const createAdmin = async (
+ 
+   firstname: string,
+   lastname: string,
+   email: string,
+   squad: string,
+   stack: string,
+   role: string
+) => {
+    let token = localStorage.getItem("token");
+   try {
+      const resp = await fetch(`${url}/superadmin/admin/create`, {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          squad,
+          stack,
+          role
+        })
+      });
+      return resp.json();
+   } catch (error) {
+     console.log(error);
+     
+   }
+};
