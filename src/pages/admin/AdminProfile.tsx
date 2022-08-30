@@ -69,11 +69,11 @@ export function AdminProfile(prop: {id?: string}){
         if(file){
             const formData = new FormData()
             formData.append("file", file);
-            uploadAdminProfilePicture(adminData._id as string, formData).then((res) => {
-                //alert(JSON.stringify(res))
-                presentAlert("done", "successfully uploaded", console.log, "done uploading").then(() => {
-                    setOutputMessage("Done profile upload");
-                })
+            formData.append("id", adminData._id as string);
+            uploadAdminProfilePicture(formData).then((res) => {
+                
+                setOutputMessage("Done profile upload");
+                presentAlert("done", "successfully uploaded", console.log, "done uploading").then(() => { })
             }).catch((err) => {
                 
                 presentAlert("Bad request", "successfully uploaded", console.log, "done uploading").then(() => {})
