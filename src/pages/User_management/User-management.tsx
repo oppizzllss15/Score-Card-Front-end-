@@ -133,7 +133,6 @@ const DecadevManagement = () => {
   };
 
   const setActive = (id: string) => {
-    console.log(id);
     setItem(id);
   };
 

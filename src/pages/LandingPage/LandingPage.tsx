@@ -6,11 +6,16 @@ import {
    AiOutlineTwitter,
    AiFillYoutube,
 } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export const LandingPage = () => {
+   const navigate = useNavigate();
+   const handleClick = () => {
+      navigate("/login")
+   }
   return (
      <div>
         <div className="landnavbar">
@@ -22,7 +27,7 @@ export const LandingPage = () => {
               <p>About</p>
               <p>Learnings</p>
               <p>Contact</p>
-              <button>Login</button>
+              <button onClick={handleClick}>Login</button>
            </div>
         </div>
 

@@ -22,6 +22,7 @@ function Login() {
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(formData)
 
     const res = await loginUser(formData.email, formData.password);
     const result = await res;
@@ -40,6 +41,7 @@ function Login() {
     } else {
       localStorage.setItem("token", result.token);
       localStorage.setItem("Id", result.user._id);
+      localStorage.setItem("User", result.user.firstname);
       if (result.user.grades) {
         navigate("/userdashboard");
         return;

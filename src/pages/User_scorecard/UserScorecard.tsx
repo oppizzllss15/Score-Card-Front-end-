@@ -2,11 +2,10 @@ import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { Grades } from "../../typings";
 import { getUserScores } from "../../utils/api";
-import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
 import '../../components/component.css'
 import "../../components/Dev-management/dev.management.css";
 import '../User_management/User-management.css'
-import { presentAlert } from "../../utils/adminApi";
+// import { presentAlert } from "../../utils/adminApi";
 import { UserDashboardLayout } from "../../layout/UserDashboard/UserDashboard";
 export function UserScorecard(){
 
@@ -48,7 +47,7 @@ export function UserScorecard(){
 
     return (
         <UserDashboardLayout>
-            <div>
+            <div className="outer-box">
                 <div className="">
                     <h1 className="scorecard-header-text">Scorecard</h1>
                 </div>

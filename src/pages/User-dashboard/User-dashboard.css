@@ -108,8 +108,9 @@
 .percent-change {
   display: flex;
   flex-direction: row;
-  width: 57px;
+  width: 67px;
   height: 19px;
+  margin-left: 1rem;
 
   font-family: "Inter";
   font-style: normal;
@@ -126,19 +127,21 @@
   flex-grow: 0;
 }
 
-.percent-change span {
+.per-change {
+    display: flex;
+    flex-direction: row;
+}
+
+.per-change .up-arrow {
   left: 16.65%;
   right: 16.64%;
   top: 8.35%;
   bottom: 8.33%;
 
   color: #8ac926;
-
-  /* Color red to show negative */
-  /* #F94144; */
 }
 
-.percent-change .down-arrow {
+.per-change .down-arrow {
   color: #f94144;
 }
 

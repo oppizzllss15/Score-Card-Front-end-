@@ -250,7 +250,7 @@ export const filterDevsPerformanceByWeek = async (id: string | number) => {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${token}`,
-      }
+      },
     });
     return await resp.json();
   } catch (err) {
@@ -318,25 +318,25 @@ export const createNewUser = async (
   stack: string
 ) => {
   let token = localStorage.getItem("token");
-   try {
-      const resp = await fetch(`${url}/superadmin/user/create`, {
-         method: "POST",
-         headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          firstname,
-          lastname,
-          email,
-          squad,
-          stack,
-        })
-      });
-      return resp.json();
-   } catch (error) {
-     console.log(error);
-   }
+  try {
+    const resp = await fetch(`${url}/superadmin/user/create`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        email,
+        squad,
+        stack,
+      }),
+    });
+    return resp.json();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getUserScores = async (id: string) => {
@@ -364,7 +364,7 @@ export const getScores = async () => {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${token}`,
-      }
+      },
     });
     return await resp.json();
   } catch (err) {
@@ -381,10 +381,25 @@ export const getPercentChange = async () => {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${token}`,
-      }
+      },
     });
     return await resp.json();
   } catch (err) {
     return [];
+  }
+};
+
+export const logoutUser = async () => {
+  try {
+    const resp = await fetch(`${url}/users/logout`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: ``,
+      },
+    });
+    return await resp.json();
+  } catch (err) {
+    return "";
   }
 };

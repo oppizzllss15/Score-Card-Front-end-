@@ -67,6 +67,11 @@ margin-top: 20px;
 .table-heading{
   width: 949px !important; 
 }
+
+.table-head {
+  border-collapse: collapse;
+}
+
 .table-header {
 
   background: rgba(0, 0, 0, 0.04);
