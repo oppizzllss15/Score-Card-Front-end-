@@ -25,7 +25,7 @@ export const UserSideBar = () => {
             <GrHomeRounded /> <p>Dashboard</p>
           </div>
         </Link>
-        <Link to="/">
+        <Link to={`/scorecard/${userid}`}>
           <div className="dash_icon" id="2">
             <BiUser /> <p>Performance Report</p>
           </div>
