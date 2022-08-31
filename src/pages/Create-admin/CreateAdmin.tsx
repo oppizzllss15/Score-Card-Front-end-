@@ -74,7 +74,7 @@ const CreateAdmin = () => {
           </div>
         </div>
         <div className="box-user">
-          <div className="form-boxx">
+          <div className="form-createadmin">
             <p className="userp">Fill in your required data</p>
             <hr />
             <div className="formuser">

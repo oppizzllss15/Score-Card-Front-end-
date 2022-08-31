@@ -10,10 +10,11 @@
     text-align: center;
      margin-top: 0px !important;
  }
- .form-boxx{
+ .form-createadmin{
     width: 44.5vw;
-    height: max-content;
+    height: 800px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-bottom: 30px;
  }
  .headerCon{
      width: 44.5vw;
