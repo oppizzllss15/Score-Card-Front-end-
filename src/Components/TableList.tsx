@@ -150,7 +150,7 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
   return (
     <>
       {user.week.length > 0 && (
-        <tr onClick={handleWindow} key={user.id}>
+        <tr onClick={handleWindow} key={user.id} className="tr_score">
           <td>{ind + 1}</td>
           <td>{user.firstname}</td>
           <td>{user.lastname}</td>
