@@ -10,10 +10,10 @@
    text-align: center;
     margin-top: 0px !important;
 }
-.form-boxx{
+.form-createuser{
     background: #fff;
    width: 44.5vw;
-   min-height: 710px;
+   height: 750px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
    margin-bottom: 30px;
 }

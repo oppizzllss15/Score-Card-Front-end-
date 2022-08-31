@@ -57,7 +57,7 @@ margin-top: 20px;
   align-items: center;
   padding: 8px;
   gap: 8px;
-  width: 99px;
+  width: 140px;
   height: 40px;
   background: #ffffff;
   border: 1px solid #c4c4c4;
@@ -66,9 +66,22 @@ margin-top: 20px;
 
 .icon-select {
   border: none;
-  width: 20%;
-  font-size: 11px;
+  width: 4rem;
+  font-size: 15px;
   margin-left: 1rem;
+  background: white;
+
+}
+
+select::part(listbox){
+   background: #ffffff;
+}
+select option{
+  background: white;
+}
+
+.icon-select:focus{
+  outline: none;
 }
 
 .table-heading{
