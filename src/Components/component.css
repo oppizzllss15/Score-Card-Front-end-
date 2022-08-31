@@ -12,7 +12,7 @@
   margin-right: 10px;
 }
 
-.simple {
+/* .simple {
   width: 100%;
   height: 40px;
   border: 1px solid #e6e6e6;
@@ -27,7 +27,24 @@
 
 .simple:focus {
   border: 1px solid #50b051;
-  outline-color: #bbe6bc;
+  outline-color: #bbe6bc; */
+  
+.simple, .select-container {
+   width: 100%;
+   height: 40px;
+   border: 1px solid #e6e6e6;
+   border-radius: 5px;
+   padding-left: 10px;
+   font-size: 1rem;
+   color: #2c3f5f;
+   font-weight: 200;
+   margin-top: 8px;
+   margin-bottom: 30px;
+}
+
+.simple:focus, .select-container:focus {
+   border: 1px solid #50b051;
+   outline-color: #bbe6bc;
 }
 .simpleText {
   font-size: 1.2rem;
@@ -112,4 +129,83 @@
   padding-left: 32px;
   font-weight: bold;
   padding-top: 40px;
+}
+.input-text:focus{
+     outline-color: none;
+     border: none;
+     outline: none;
+}
+.select-container{
+    width: 100%;
+    height: 37px;
+}
+.weekbox{
+    width: 17vw;
+    height: 35vh;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.weekbox p{
+    font-size: 1rem;
+    color: #50B051;
+    padding-left: 32px;
+    font-weight: bold;
+    padding-top: 40px;
+}
+.profilemodal{
+    position: absolute;
+    width: 23.813rem;
+    height: 20.375rem;
+    top: 8rem;
+    right: 6rem;
+     box-shadow: 5px 10px 180px 100rem rgba(0,0,0,0.4);
+    box-sizing: border-box;
+    background-color: white;
+    padding-top: 28px;
+    border-radius: 2px;
+    
+}
+
+.personpic{
+  padding-left: 2.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 13px;
+}
+
+.pimg{
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 16px;
+    width: 65px;
+    height: 65px;
+}
+.namework{
+    display: flex;
+    flex-direction: column;
+}
+.profilemodal hr{
+    background-color: rgb(214, 208, 208);
+    color: rgb(214, 208, 208) ;
+    margin-bottom: 2.3rem;
+}
+.personaction{
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+    color: #03435F;
+    font-weight: 300;
+    font-size: 16px;
+}
+.personaction p{
+    margin-left: 15px;
+}
+.pro{
+    display: flex;
+    margin-left: 2.3rem;
+    margin-bottom: 19px;
+}
+.pro :hover{
+  font-weight: 600;
 }

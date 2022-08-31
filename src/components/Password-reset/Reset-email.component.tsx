@@ -29,6 +29,7 @@ const EmailReset = ({ handleResetPass }: Props) => {
             type="email"
             placeholder="Enter email address"
             className="inp"
+            required
           />
         </div>
       </label>
