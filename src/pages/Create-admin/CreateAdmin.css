@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
     margin-top: 32px;
+   
+ }
+ .box-user{
+    background-color: white;
  }
  .headuser {
     font-weight: 600;
@@ -47,6 +51,7 @@
  }
  .formuser{
      padding: 50px 50px;
+     background: white;
  }
  .userp{
      margin-top: 3.8vh;

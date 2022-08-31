@@ -15,6 +15,9 @@ export const SideBar = () => {
     await logoutUser();
     localStorage.setItem("token", "");
     localStorage.setItem("Id", "");
+    localStorage.setItem("User", "");
+    localStorage.setItem("lastname", "");
+    localStorage.setItem("role", "");
     navigate("/login")
   }
 

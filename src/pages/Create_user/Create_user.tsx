@@ -88,9 +88,6 @@ export const CreateUser = () => {
         <div className="headuser">
           <div className="headerCon">
             <p>Create User</p>
-            <Link to="/weeklyperformance">
-              <button>Performance</button>
-            </Link>
             <Link to="/devmanagement">
               <button>View all user</button>
             </Link>

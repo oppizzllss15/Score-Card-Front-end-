@@ -6,6 +6,7 @@ import "./../layout/DashboardLayout/DashboardLayout.css"
 export const Userheader = () => {
 
   const [isActive, setIsActive] = useState(false);
+  const username = localStorage.getItem("User");
 
      const getFormModal = () => {
         if (isActive) setIsActive(false);
@@ -21,7 +22,7 @@ export const Userheader = () => {
         <div onClick={getFormModal} className="profile">
            <div className="image"></div>
            <div className="name">
-              <p>User</p>
+              <p>{username}</p>
            </div>
 
            {isActive && <UserModal />}
