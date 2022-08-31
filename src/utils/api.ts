@@ -250,7 +250,7 @@ export const filterDevsPerformanceByWeek = async (id: string | number) => {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${token}`,
-      }
+      },
     });
     return await resp.json();
   } catch (err) {
@@ -331,6 +331,113 @@ export const createNewUser = async (
         email,
         squad,
         stack,
+      }),
+    });
+    return resp.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getUserScores = async (id: string) => {
+  let token = localStorage.getItem("token");
+  try {
+    const resp = await fetch(`${url}/users/performance/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return resp.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getScores = async () => {
+  let token = localStorage.getItem("token");
+  let id = localStorage.getItem("Id");
+  try {
+    const resp = await fetch(`${url}/users/getscores/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await resp.json();
+  } catch (err) {
+    return [];
+  }
+};
+
+export const getPercentChange = async () => {
+  let token = localStorage.getItem("token");
+  let id = localStorage.getItem("Id");
+  try {
+    const resp = await fetch(`${url}/users/score/tracker/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await resp.json();
+  } catch (err) {
+    return [];
+  }
+};
+
+export const logoutUser = async () => {
+  try {
+    const resp = await fetch(`${url}/users/logout`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: ``,
+      },
+    });
+    return await resp.json();
+  } catch (err) {
+    return "";
+  }
+};
+
+// /superadmin/user/calculate/score/:id
+// /superadmin/user/editscoreweek/:id
+export const addEditScore = async (
+  type: string,
+  id: string,
+  week: number,
+  agile: number,
+  algorithm: number,
+  assessment: number,
+  weekly_task: number
+) => {
+  let address = null
+  let token = localStorage.getItem("token");
+  const endpoint1 = `${url}/superadmin/user/calculate/score/${id}`
+  const endpoint2 = `${url}/superadmin/user/editscoreweek/${id}`
+  
+  if (type === "add") {
+    address = endpoint1
+  } else if (type === "edit") {
+    address = endpoint2
+  }
+  try {
+    const resp = await fetch(`${address}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        week,
+        agile,
+        algorithm,
+        assessment,
+        weekly_task,
       }),
     });
     return resp.json();

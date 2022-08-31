@@ -59,6 +59,7 @@ export interface Grades {
 
     export interface IStack{
       _id?: string,
+      id?: string,
       name: string,
       image?: string
     }

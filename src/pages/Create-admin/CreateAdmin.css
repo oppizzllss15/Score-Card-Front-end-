@@ -12,13 +12,16 @@
  }
  .form-boxx{
     width: 44.5vw;
-    height: 780px;
+    min-height: 780px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
  }
  .headerCon{
      width: 44.5vw;
      display: flex;
      justify-content: space-between;
+     line-height: 17px;
+     font-size: 14px;
+     
  }
  .headerCon button{
     color: #14A800; 
