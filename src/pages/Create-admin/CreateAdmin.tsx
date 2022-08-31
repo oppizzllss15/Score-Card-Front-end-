@@ -70,7 +70,7 @@ const CreateAdmin = () => {
         <div className="headuser">
           <div className="headerCon">
             <p>Create Admin</p>
-            <Link to="/adminmanagement"><button>View all Admins</button></Link>
+            <Link to="/adminmanagement"><button className="bbb">View all Admins</button></Link>
           </div>
         </div>
         <div className="box-user">

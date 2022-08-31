@@ -1,6 +1,6 @@
 .user-dashboard {
   width: 80%;
-  min-height: 100vh;
+height: max-content;
   display: flex;
   flex-direction: column;
 }
