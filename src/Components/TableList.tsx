@@ -94,7 +94,33 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
           algorithm,
           assessment,
           weekly_task
-        );
+        ).then((res) => { 
+          if (res.message && res.message.match(/updated successfully/gi)) {
+            setTimeout(() => {
+              Swal.fire({
+                position: "top",
+                icon: "success",
+                title: "Successful",
+                text: `${res.message}`,
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+                confirmButtonAriaLabel: "Thumbs up, great!",
+                confirmButtonColor: "#93d413",
+              });
+            }, 100);
+          } else {
+            setTimeout(() => {
+              Swal.fire({
+                position: "top",
+                icon: "error",
+                title: "Failed",
+                text: `${res.error}`,
+                showDenyButton: true,
+                denyButtonText: "Try again",
+                confirmButtonColor: "#93d413",
+              });
+            }, 100);
+          }
+        })
         setFormData(defaultFormField);
         setUpdateCall(false);
         check(Number(week))
@@ -129,7 +155,34 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
           algorithm,
           assessment,
           weekly_task
-        );
+        ).then((res) => { 
+          console.log(res)
+          if (res.message && res.message.match(/updated successfully/gi)) {
+            setTimeout(() => {
+              Swal.fire({
+                position: "top",
+                icon: "success",
+                title: "Successful",
+                text: `${res.message}`,
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+                confirmButtonAriaLabel: "Thumbs up, great!",
+                confirmButtonColor: "#93d413",
+              });
+            }, 100);
+          } else {
+            setTimeout(() => {
+              Swal.fire({
+                position: "top",
+                icon: "error",
+                title: "Failed",
+                text: `${res.error}`,
+                showDenyButton: true,
+                denyButtonText: "Try again",
+                confirmButtonColor: "#93d413",
+              });
+            }, 100);
+          }
+        })
         setFormData(defaultFormField);
         setAddCall(false);
         check(Number(week))
