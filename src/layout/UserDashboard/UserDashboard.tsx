@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { Header } from "../../components/Header";
+import { Userheader } from "../../components/Userheader";
 import { UserSideBar } from "../../components/UserSideBar";
 import "./UserDashboard.css";
 
@@ -10,7 +11,7 @@ interface RNode {
 export const UserDashboardLayout = ({ children }: RNode) => {
    return (
       <div className="dash">
-         <Header />
+         <Userheader />
          <div className="layout-flex">
             <div className="sidebar-position">
              
