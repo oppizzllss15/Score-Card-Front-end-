@@ -45,6 +45,11 @@ const DevsWeeklyPerformance = () => {
     setWeek(currWeek);
   };
 
+  const handleEffect = async (week: number) => {
+   await filterPerformance();
+   setWeek(week);
+ };
+
   return (
     <DashboardLayout>
       {/* {list.length > 0 && ( */}
@@ -105,6 +110,7 @@ const DevsWeeklyPerformance = () => {
                         ind={ind}
                         setActive={setActive}
                         selectedItem={item}
+                        check={handleEffect}
                       />
                     ))}
                   </tbody>

@@ -403,3 +403,45 @@ export const logoutUser = async () => {
     return "";
   }
 };
+
+// /superadmin/user/calculate/score/:id
+// /superadmin/user/editscoreweek/:id
+export const addEditScore = async (
+  type: string,
+  id: string,
+  week: number,
+  agile: number,
+  algorithm: number,
+  assessment: number,
+  weekly_task: number
+) => {
+  let address = null
+  let token = localStorage.getItem("token");
+  const endpoint1 = `${url}/superadmin/user/calculate/score/${id}`
+  const endpoint2 = `${url}/superadmin/user/editscoreweek/${id}`
+  
+  if (type === "add") {
+    address = endpoint1
+  } else if (type === "edit") {
+    address = endpoint2
+  }
+  try {
+    const resp = await fetch(`${address}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        week,
+        agile,
+        algorithm,
+        assessment,
+        weekly_task,
+      }),
+    });
+    return resp.json();
+  } catch (error) {
+    console.log(error);
+  }
+};

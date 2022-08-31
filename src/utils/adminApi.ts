@@ -118,22 +118,23 @@ export function getAdminData(adminId: string): Promise< ResponseDataType<IAdmin,
 }
 
 
-export const uploadAdminProfilePicture = async (adminId: string, imgFormData: FormData) => {
+export const uploadAdminProfilePicture = async (imgFormData: FormData) => {
   let token = localStorage.getItem("token");
+  console.log(imgFormData)
   try {
     const resp = await fetch(`${url}/admin/upload`, {
       method: "POST",
       headers: {
-        "Content-Type": "multipart/form-data",
+        // "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(imgFormData),
+      body: imgFormData,
     
     });
     
     //const res = await resp.json();
     //alert(JSON.stringify(res) + " response")
-    
+    //console.log(await resp.json())
     return resp.json();
 
   } catch (err) {

@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { addEditScore } from "../utils/api";
 import { CgClose } from "react-icons/cg";
+import Swal from "sweetalert2";
 import "./component.css";
 import "./Dev-management/dev.management.css";
 
@@ -23,6 +25,7 @@ interface Prop {
   ind: number;
   setActive: (id: string) => void;
   selectedItem: string;
+  check: (week: number) => void;
 }
 
 const defaultFormField = {
@@ -33,7 +36,7 @@ const defaultFormField = {
   weekly_task: 0,
 };
 
-const TableList = ({ user, ind, setActive, selectedItem }: Prop) => {
+const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
   const [isActive, setIsActive] = useState(false);
   const [updateCall, setUpdateCall] = useState(false);
   const [addCall, setAddCall] = useState(false);
@@ -72,16 +75,72 @@ const TableList = ({ user, ind, setActive, selectedItem }: Prop) => {
 
   const editScore = (e: any) => {
     e.preventDefault();
-    console.log(formData);
-    setFormData(defaultFormField);
-    setUpdateCall(false);
+    const type = "edit";
+    Swal.fire({
+      icon: "info",
+      text: "Confirm update score?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`,
+      confirmButtonColor: "#93d413",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        addEditScore(
+          type,
+          uid,
+          week,
+          agile,
+          algorithm,
+          assessment,
+          weekly_task
+        );
+        setFormData(defaultFormField);
+        setUpdateCall(false);
+        check(Number(week))
+      } else if (result.isDenied) {
+        Swal.fire({
+          icon: "info",
+          text: "Changes are not saved",
+          confirmButtonColor: "#93d413",
+        });
+      }
+    });
   };
 
   const addScore = (e: any) => {
     e.preventDefault();
-    console.log(formData);
-    setFormData(defaultFormField);
-    setAddCall(false);
+    const type = "add";
+    Swal.fire({
+      icon: "info",
+      text: "Confirm update score?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`,
+      confirmButtonColor: "#93d413",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        addEditScore(
+          type,
+          uid,
+          week,
+          agile,
+          algorithm,
+          assessment,
+          weekly_task
+        );
+        setFormData(defaultFormField);
+        setAddCall(false);
+        check(Number(week))
+      } else if (result.isDenied) {
+        Swal.fire({
+          icon: "info",
+          text: "Changes are not saved",
+          confirmButtonColor: "#93d413",
+        });
+      }
+    });
   };
 
   const handleWindow = (e: any) => {
