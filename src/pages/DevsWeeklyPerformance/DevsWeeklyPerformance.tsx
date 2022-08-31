@@ -52,7 +52,7 @@ const DevsWeeklyPerformance = () => {
 
   return (
     <DashboardLayout>
-      {/* {list.length > 0 && ( */}
+      {list.length > 0 && (
         <div className="mainb">
           <div className="dashoard-container">
             <div className="dashboard-heading">
@@ -119,7 +119,7 @@ const DevsWeeklyPerformance = () => {
             </div>
           </div>
         </div>
-      {/* )} */}
+      )}
     </DashboardLayout>
   );
 };

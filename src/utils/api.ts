@@ -404,8 +404,7 @@ export const logoutUser = async () => {
   }
 };
 
-// /superadmin/user/calculate/score/:id
-// /superadmin/user/editscoreweek/:id
+
 export const addEditScore = async (
   type: string,
   id: string,
