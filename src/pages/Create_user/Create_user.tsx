@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import "./createuser.css";
 
 export const CreateUser = () => {
+  
   interface FormDataType {
     firstname: string;
     lastname: string;
