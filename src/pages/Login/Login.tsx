@@ -43,7 +43,8 @@ function Login() {
       localStorage.setItem("User", result.user.firstname);
       localStorage.setItem("lastname", result.user.lastname);
       localStorage.setItem("role", result.user.position);
-      
+      localStorage.setItem("imageurl", result.user.profile_img);
+
       if (result.user.grades) {
         navigate("/userdashboard");
         return;

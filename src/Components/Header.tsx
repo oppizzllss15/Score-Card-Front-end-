@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Logo } from "./Logo";
 import { FaSearch } from "react-icons/fa";
 import { ProfileModal } from "./ProfileModal";
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
-  const username = localStorage.getItem("User");
+  const [user, setUser] = useState({ name: "", image: "" });
 
   const getFormModal = () => {
     if (isActive) setIsActive(false);
     else setIsActive(true);
   };
 
+  useEffect(() => {
+    const username = localStorage.getItem("User") as string;
+    let imageUrl = localStorage.getItem("imageurl");
+    if (!imageUrl) {
+      setUser((prev) => ({ ...prev, image: "./assets/images/scoreavatar.png" }));
+    }
+    setUser((user) => ({ ...user, name: username!, image: imageUrl! }));
+  }, []);
+  
   return (
     <div className="navbar">
       <div className="logo">
@@ -26,9 +35,15 @@ export const Header = () => {
       </div>
 
       <div onClick={getFormModal} className="profile">
-        <div className="image"></div>
+        <div className="image">
+          <img
+            src={user.image}
+            alt=""
+            style={{ width: "40px", height: "40px", borderRadius: "5px" }}
+          />
+        </div>
         <div className="name">
-          <p>{username}</p>
+          <p>{user.name}</p>
         </div>
         {isActive && <ProfileModal />}
       </div>

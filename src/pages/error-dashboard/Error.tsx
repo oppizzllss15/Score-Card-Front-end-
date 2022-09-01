@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import microscope from "../../images/microscope.svg";
 import styles from "./Error.module.css";
 import "../Admin-dashboard/Admindashboard.css"
 import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
@@ -18,7 +17,7 @@ const EmptyStack = ({getFormModal}: Prop)=> {
               <div className={`${styles["dashboard-container"]}`}>
                  <div className={`${styles["microscope"]}`}>
                     <img
-                       src={microscope}
+                       src="./assets/images/microscope.svg"
                        alt=""
                        style={{ width: "200px", height: "200px" }}
                     />
