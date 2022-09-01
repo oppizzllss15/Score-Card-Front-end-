@@ -1,4 +1,5 @@
 import { useState, Fragment } from "react";
+import { Selectoption } from "../Selectoption";
 import { CgClose } from "react-icons/cg";
 import Swal from "sweetalert2";
 import "./dev.management.css";
@@ -187,7 +188,7 @@ export default function Devs({
               </div>
 
               <form onSubmit={(e) => onSubmit(e)}>
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Firstname
                 </label>
                 <input
@@ -198,7 +199,7 @@ export default function Devs({
                   value={firstname}
                 />
 
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Lastname
                 </label>
                 <input
@@ -209,7 +210,7 @@ export default function Devs({
                   value={lastname}
                 />
 
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Phone
                 </label>
                 <input
@@ -220,18 +221,16 @@ export default function Devs({
                   value={phone}
                 />
 
-                <label className="newpassword" htmlFor="">
+                <label className="control-text stack" htmlFor="">
                   Stack
                 </label>
-                <input
-                  type="text"
-                  name="stack"
-                  placeholder={users.stack}
-                  onChange={(e) => handleChange(e)}
-                  value={stack}
-                />
-
-                <label className="newpassword" htmlFor="">
+                  <Selectoption
+                    label="stack"
+                    name="stack"
+                    value={stack}
+                    handleChange={handleChange}
+                  />
+                <label className="control-text" htmlFor="">
                   Squad
                 </label>
                 <input
