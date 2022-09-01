@@ -147,7 +147,7 @@ export function AdminProfile(prop: {id?: string}){
 
                             </div>
                             <div className='form-group simpleInput'>
-                                <button type="button" className="btn btn-lg btn-primary submit-btn form-control-lg" onClick={handleSubmit}>save</button>
+                                <button type="button" className=" submit-btn " onClick={handleSubmit}>save</button>
                             </div>
                         </form>
                     </div>
