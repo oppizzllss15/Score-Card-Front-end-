@@ -13,6 +13,7 @@ export function AdminDashboard() {
   const [input, setInput] = useState(defaultForm);
   const [isActive, setIsActive] = useState(false);
   const { name, image } = input;
+  const role = localStorage.getItem("role");
 
   const getFormModal = () => {
     if (isActive) setIsActive(false);
@@ -64,9 +65,11 @@ export function AdminDashboard() {
         <div className="dashboard-body">
           <div className="dash-head">
             <h1 className="dashboard">Dashboard</h1>
+            {role === "superadmin" && (
             <button onClick={getFormModal} className="create-stack">
               + Create Stack
             </button>
+            )}
           </div>
           <div className="admin-dashboard">
             {data.map((stack: { image: string; name: string }) => (

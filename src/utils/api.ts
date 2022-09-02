@@ -142,7 +142,6 @@ export const updateDevAccount = async (
   id: string,
   firstname: string,
   lastname: string,
-  phone: string,
   squad: string,
   stack: string
 ) => {
@@ -154,7 +153,7 @@ export const updateDevAccount = async (
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ firstname, lastname, phone, stack, squad }),
+      body: JSON.stringify({ firstname, lastname, stack, squad }),
     });
     return resp.json();
   } catch (err) {

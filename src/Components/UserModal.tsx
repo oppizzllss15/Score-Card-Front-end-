@@ -10,7 +10,7 @@ import "./component.css";
 export const UserModal = () => {
   const firstname = localStorage.getItem("User");
   const lastname = localStorage.getItem("lastname");
-  const imageUrl = localStorage.getItem("imageurl");
+  const imageUrl = localStorage.getItem("imageurl") || "./assets/images/scoreavatar.png";
   const navigate = useNavigate();
 
   const handleChange = async () => {
@@ -26,12 +26,12 @@ export const UserModal = () => {
   return (
     <div className="profilemodal">
       <div className="personpic">
-        {imageUrl !== "undefined" ? (
+        {imageUrl === "undefined" ? (
           <div className="pimg">
             <img
               src="./assets/images/scoreavatar.png"
               alt=""
-              style={{ width: "40px", height: "40px", borderRadius: "5px" }}
+              style={{ width: "65px", height: "65px", borderRadius: "5px" }}
             />
           </div>
         ) : (

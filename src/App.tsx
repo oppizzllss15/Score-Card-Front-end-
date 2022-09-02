@@ -17,6 +17,7 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { UserScorecard } from "./pages/User_scorecard/UserScorecard";
 
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -24,14 +25,19 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/forgot/password" element={<Forget />} />
       <Route path="/reset-password/:id/:token" element={<Reset />} />
+      <Route path="/change_password" element={<Change />} />
+
       <Route path="/dashboard" element={<AdminDashboard />} />
       <Route path="/createuser" element={<CreateUser />} />
-      <Route path="/change_password" element={<Change />} />
-      <Route path="/createadmin" element={<CreateAdmin />} />
       <Route path="/devmanagement" element={<DecadevManagement />} />
       <Route path="/weeklyperformance" element={<DevsWeeklyPerformance />} />
+     
+      
+      <Route path="/createadmin" element={<CreateAdmin />} />
       <Route path="/adminmanagement" element={<AdminManagement />} />
+      
       <Route path="/adminprofile/:id" element={<AdminProfile id="" />} />
+
       <Route path="/userdashboard" element={<UserDashboard />} />
       <Route path="/scorecard/:id" element={<UserScorecard />} />
     </Routes>

@@ -7,7 +7,7 @@ export const Userheader = () => {
 
   const [isActive, setIsActive] = useState(false);
   const username = localStorage.getItem("User");
-  const imageUrl = localStorage.getItem("imageurl");
+  const imageUrl = localStorage.getItem("imageurl") || "./assets/images/scoreavatar.png";
 
      const getFormModal = () => {
         if (isActive) setIsActive(false);
@@ -21,7 +21,7 @@ export const Userheader = () => {
         </div>
 
         <div onClick={getFormModal} className="profile">
-        {imageUrl !== "undefined" ? (
+        {imageUrl === "undefined" ? (
           <div className="image">
             <img
               src="./assets/images/scoreavatar.png"

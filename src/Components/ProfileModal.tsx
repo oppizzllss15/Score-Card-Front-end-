@@ -27,7 +27,7 @@ export const ProfileModal = () => {
   return (
     <div className="profilemodal">
       <div className="personpic">
-        {imageUrl !== "undefined" ? (
+        {imageUrl === "undefined" ? (
           <div className="pimg">
             <img
               src="./assets/images/scoreavatar.png"
@@ -38,7 +38,7 @@ export const ProfileModal = () => {
         ) : (
           <div className="pimg">
             <img
-              src={imageUrl}
+              src="./assets/images/scoreavatar.png"
               alt=""
               style={{ width: "40px", height: "40px", borderRadius: "5px" }}
             />

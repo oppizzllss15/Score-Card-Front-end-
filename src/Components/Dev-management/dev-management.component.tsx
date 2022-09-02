@@ -20,7 +20,6 @@ interface Prop {
     id: any,
     firstname: string,
     lastname: string,
-    phone: string,
     squad: string,
     stack: string
   ) => void;
@@ -31,7 +30,6 @@ interface Prop {
 const defaultFormField = {
   firstname: "",
   lastname: "",
-  phone: "",
   stack: "",
   squad: "",
 };
@@ -48,7 +46,7 @@ export default function Devs({
   const [isActive, setIsActive] = useState(false);
   const [updateCall, setUpdateCall] = useState(false);
   const [formData, setFormData] = useState(defaultFormField);
-  const { firstname, lastname, phone, stack, squad } = formData;
+  const { firstname, lastname, stack, squad } = formData;
   const [uid] = useState(users.id);
 
   const handleChange = (e: any) => {
@@ -113,7 +111,6 @@ export default function Devs({
       uid,
       formData.firstname,
       formData.lastname,
-      formData.phone,
       formData.squad,
       formData.stack
     );
@@ -208,17 +205,6 @@ export default function Devs({
                   placeholder={users.lastname}
                   onChange={(e) => handleChange(e)}
                   value={lastname}
-                />
-
-                <label className="control-text" htmlFor="">
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="+234-812-3456-789"
-                  onChange={(e) => handleChange(e)}
-                  value={phone}
                 />
 
                 <label className="control-text stack" htmlFor="">

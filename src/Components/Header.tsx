@@ -20,7 +20,7 @@ export const Header = () => {
     }
     setUser((user) => ({ ...user, name: username!, image: imageUrl! }));
   }, []);
-  
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -37,7 +37,7 @@ export const Header = () => {
       <div onClick={getFormModal} className="profile">
         <div className="image">
           <img
-            src={user.image}
+            src="./assets/images/scoreavatar.png"
             alt=""
             style={{ width: "40px", height: "40px", borderRadius: "5px" }}
           />
