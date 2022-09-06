@@ -1,20 +1,15 @@
 import React from 'react'
 import { logoutUser } from "../utils/api";
-import { Link } from 'react-router-dom';
-import { AiOutlineUser } from "react-icons/ai";
-import { RiLockPasswordLine } from "react-icons/ri";
-import { TbArrowBarRight} from "react-icons/tb";
+import { Link } from "react-router-dom";
+import { BiUser } from "react-icons/bi";
+import { AiOutlineSetting } from "react-icons/ai";
+import { BsArrowBarRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-
 import "./component.css"
 
-
-
-
-export const ProfileModal = () => {
+export const UserModal = () => {
    const firstname = localStorage.getItem("User");
    const lastname = localStorage.getItem("lastname");
-   const role = localStorage.getItem("role");
    const navigate = useNavigate();
 
    const handleChange = async () => {
@@ -26,6 +21,7 @@ export const ProfileModal = () => {
       localStorage.setItem("role", "");
       navigate("/")
     }
+
   return (
      <div className="profilemodal">
         <div className="personpic">
@@ -34,22 +30,22 @@ export const ProfileModal = () => {
               <p>
                  <b>{firstname} {lastname}</b>
               </p>
-              <p>{role}</p>
+              <p>Node Stack</p>
            </div>
         </div>
         <hr />
         <div className="personaction">
            <div className="pro">
-              <AiOutlineUser /> <p>Profile</p>
+              <BiUser /> <p>Account</p>
            </div>
-           <Link to="/change_password">
+           <Link to="/">
               <div className="pro">
-                 <RiLockPasswordLine /> <p>Change Password</p>
+                 <AiOutlineSetting /> <p>Settings</p>
               </div>
            </Link>
            <Link to="/login">
               <div className="pro">
-                 <TbArrowBarRight /> <p onClick={handleChange}>Logout</p>
+                 <BsArrowBarRight /> <p onClick={handleChange}>Logout</p>
               </div>
            </Link>
         </div>

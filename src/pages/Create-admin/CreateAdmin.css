@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
     margin-top: 32px;
+   
+ }
+ .box-user{
+    background-color: white;
  }
  .headuser {
     font-weight: 600;
@@ -10,21 +14,25 @@
     text-align: center;
      margin-top: 0px !important;
  }
- .form-boxx{
+ .form-createadmin{
     width: 44.5vw;
-    height: 780px;
+    height: 800px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-bottom: 30px;
  }
  .headerCon{
      width: 44.5vw;
      display: flex;
      justify-content: space-between;
+     line-height: 17px;
+     font-size: 14px;
+     
  }
  .headerCon button{
     color: #14A800; 
     border: 1px solid #14A800;
     border-radius: 4px;
-    width: 154px;
+
     background-color: rgb(252, 252, 252);
     font-size: 14px;
     font-family: 'inter'
@@ -43,6 +51,7 @@
  }
  .formuser{
      padding: 50px 50px;
+     background: white;
  }
  .userp{
      margin-top: 3.8vh;

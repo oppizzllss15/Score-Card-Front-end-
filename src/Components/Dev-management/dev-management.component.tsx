@@ -180,7 +180,7 @@ export default function Devs({
             </div>
           ) : null}
           {updateCall && (
-            <div className="from">
+            <div className="form-update">
               <div className="form-header">
                 {/* <p className="top-text">User Details</p> */}
                 <button onClick={handleEdit} className="top-text-btn"><CgClose /></button>

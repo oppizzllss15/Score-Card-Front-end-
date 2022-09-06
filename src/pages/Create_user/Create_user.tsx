@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import "./createuser.css";
 
 export const CreateUser = () => {
+  
   interface FormDataType {
     firstname: string;
     lastname: string;
@@ -93,7 +94,7 @@ export const CreateUser = () => {
           </div>
         </div>
         <div className="box-user">
-          <div className="form-boxx">
+          <div className="form-createuser">
             <p className="userp">Fill in your required data</p>
             <hr />
             <div className="formuser">

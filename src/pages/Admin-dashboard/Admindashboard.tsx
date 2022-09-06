@@ -20,12 +20,6 @@ export function AdminDashboard() {
   };
 
   const handleChange = (e: any) => {
-    //  const { value, files } = e.target;
-    //  if (files) {
-    //    setInput({ ...input, image: files });
-    //  }else if(e.target.name === "name") {
-    //     setInput({ ...input, name: value });
-    //  }
     const { files } = e.target;
     if (files) {
       const url = `https://api.cloudinary.com/v1_1/omecloudinary/upload`;

@@ -1,0 +1,220 @@
+.user-dashboard {
+  width: 80%;
+height: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+
+  position: absolute;
+  width: 952px;
+  height: 231px;
+  left: 380px;
+  top: 128px;
+}
+
+.overview {
+  width: 148px;
+  height: 39px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
+
+  color: #03435f;
+}
+
+.logic-board {
+  display: flex;
+  flex-direction: row;
+  width: 952px;
+  height: 160px;
+  justify-content: space-between;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.logic-item {
+  width: 223px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  padding: 15px;
+
+  background: #ffffff;
+}
+
+.logic-item p {
+  width: 85px;
+  height: 19px;
+  left: 16px;
+  top: 16px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+
+  color: #21334f;
+}
+
+.logic-item-text {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 49px;
+  width: 191px;
+  height: 58px;
+  left: 16px;
+  top: 51px;
+}
+
+.item-score {
+  width: 61px;
+  height: 58px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  /* identical to box height */
+
+  color: #21334f;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.percent-change {
+  display: flex;
+  flex-direction: row;
+  width: 67px;
+  height: 19px;
+  margin-left: 1rem;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #21334f;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.per-change {
+    display: flex;
+    flex-direction: row;
+}
+
+.per-change .up-arrow {
+  left: 16.65%;
+  right: 16.64%;
+  top: 8.35%;
+  bottom: 8.33%;
+
+  color: #8ac926;
+}
+
+.per-change .down-arrow {
+  color: #f94144;
+}
+
+.sheet-container {
+  display: flex;
+  flex-direction: row;
+  width: 953px;
+  height: 368px;
+  margin-top: 20rem;
+  margin-left: 8.8rem;
+  box-sizing: border-box;
+  padding: 1.8rem;
+  justify-content: space-between;
+
+  background: #ffffff;
+}
+
+.sheet-title {
+  width: 164px;
+  height: 38px;
+  left: 38px;
+  top: 40px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #03435f;
+}
+
+.sheet-body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.chart-colors {
+  display: flex;
+  flex-direction: row;
+  width: 104px;
+  height: 14px;
+  left: 713px;
+  top: 41px;
+  justify-content: space-between;
+  align-items: right;
+  margin-left: 29rem;
+}
+
+.chart-yellow {
+    width: 14px;
+    height: 14px;
+    background: #F9C74F;
+}
+.chart-red{
+    width: 14px;
+    height: 14px;
+    background: #F94144;
+}
+.chart-green {
+    width: 14px;
+    height: 14px;
+    background: #B8D344;
+}
+.chart-blue {
+    width: 14px;
+    height: 14px;
+    background: #14A800;
+}
+
+.chart-board {
+  width: 637px;
+  height: 345px;
+  left: 244px;
+  top: 0px;
+}

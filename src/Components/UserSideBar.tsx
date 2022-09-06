@@ -1,47 +1,38 @@
 import { logoutUser } from "../utils/api";
 import { Link } from "react-router-dom";
-import { GrHomeRounded } from "react-icons/gr";
-import { BiUser } from "react-icons/bi";
+import { RiDashboardLine } from "react-icons/ri";
+import { TbReportSearch } from "react-icons/tb";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { TbArrowBarRight } from "react-icons/tb";
-import { BsGraphUp } from "react-icons/bs";
-
 import { useNavigate } from "react-router-dom";
 
-export const SideBar = () => {
+export const UserSideBar = () => {
   const navigate = useNavigate();
+  const userid = localStorage.getItem("Id");
 
   const handleChange = async () => {
     await logoutUser();
     localStorage.setItem("token", "");
     localStorage.setItem("Id", "");
-    localStorage.setItem("User", "");
-    localStorage.setItem("lastname", "");
-    localStorage.setItem("role", "");
-    navigate("/login")
-  }
+    navigate("/login");
+  };
 
   return (
      <div className="sidebar">
         <div className="content-link">
-           <Link to="/dashboard">
+           <Link to="/userdashboard">
               <div className="dash_icon" id="1">
-                 <GrHomeRounded /> <p>Dashboard</p>
+                 <RiDashboardLine /> <p>Dashboard</p>
               </div>
            </Link>
-           <Link to="/createuser">
+           <Link to={`/scorecard/${userid}`}>
               <div className="dash_icon" id="2">
-                 <BiUser /> <p>User Management</p>
+                 <TbReportSearch /> <p>Performance Report</p>
               </div>
            </Link>
-           <Link to="/createadmin">
+           <Link to={`/scorecard/${userid}`}>
               <div className="dash_icon" id="3">
-                 <AiOutlineUserAdd /> <p>Admin Management</p>
-              </div>
-           </Link>
-           <Link to="/weeklyperformance">
-              <div className="dash_icon" id="3">
-                 <BsGraphUp /> <p>Performance</p>
+                 <AiOutlineUserAdd /> <p>Skill Evaluation</p>
               </div>
            </Link>
         </div>

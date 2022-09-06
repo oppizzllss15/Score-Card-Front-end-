@@ -4,7 +4,7 @@
    margin: 0;
    height: 100vh;
 }
-.navbar, .userheader {
+.navbar {
    display: flex;
    flex-direction: row;
    align-content: center;
