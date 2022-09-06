@@ -1,19 +1,17 @@
 import { useState, Fragment } from "react";
 import Swal from "sweetalert2";
-import "./admin.management.css";
-import {IAdmin, IAdminWithStack} from '../../typings'
-import { Selectoption } from '../Selectoption';
-import { presentAlert } from "../../utils/adminApi";
+import { CgClose } from "react-icons/cg";
+import "../Dev-management/dev.management.css";
+import { IAdmin, IAdminWithStack } from "../../typings";
+import { Selectoption } from "../Selectoption";
+
 interface Prop {
-  
   users: IAdminWithStack;
 
   activateUser: (status: string, adminId: string, adminName: string) => void;
   deactivateUser: (status: string, adminId: string, adminName: string) => void;
   deleteUser: (id: string, adminName: string) => void;
-  updateUserAcct: (
-    id: any, admin: IAdminWithStack
-  ) => void;
+  updateUserAcct: (id: any, admin: IAdminWithStack) => void;
   setActive: (id: string) => void;
   selectedItem: string;
 }
@@ -100,11 +98,8 @@ export default function Admin({
 
   const updateData = (e: any) => {
     e.preventDefault();
-    
-    updateUserAcct(
-      uid,
-      formData
-    );
+
+    updateUserAcct(uid, formData);
     setUpdateCall(false);
   };
 
@@ -131,32 +126,59 @@ export default function Admin({
           {isActive && users.id === selectedItem ? (
             <div className="dropdown-content">
               <div className="dropdown-item">
-                <button name={users.id} onClick={handleEdit}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={handleEdit}
+                >
                   Edit
                 </button>
               </div>
               <div className="dropdown-item">
-                <button name={users.id} onClick={(e) => {handleActivate(e, users.firstname as string )}}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={(e) => {
+                    handleActivate(e, users.firstname as string);
+                  }}
+                >
                   Activate
                 </button>
               </div>
               <div className="dropdown-item">
-                <button name={users.id} onClick={(e) => {handleDeactivate(e, users.firstname as string )}}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={(e) => {
+                    handleDeactivate(e, users.firstname as string);
+                  }}
+                >
                   Deactivate
                 </button>
               </div>
               <div className="dropdown-item">
-                <button name={users.id} onClick={(e) => {handleDelete(e, users.firstname as string )}}>
+                <button
+                  className="dropdown-item-btn"
+                  name={users.id}
+                  onClick={(e) => {
+                    handleDelete(e, users.firstname as string);
+                  }}
+                >
                   Delete
                 </button>
               </div>
             </div>
           ) : null}
           {updateCall && (
-            <div className="from">
-              <p className="top-text">Update User Details</p>
+            <div className="form-update">
+              {/* <p className="top-text">Update User Details</p> */}
+              <div className="form-header">
+                <button onClick={handleEdit} className="top-text-btn">
+                  <CgClose />
+                </button>
+              </div>
               <form onSubmit={(e) => updateData(e)}>
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Firstname
                 </label>
                 <input
@@ -167,7 +189,7 @@ export default function Admin({
                   value={firstname}
                 />
 
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Lastname
                 </label>
                 <input
@@ -178,7 +200,7 @@ export default function Admin({
                   value={lastname}
                 />
 
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Phone
                 </label>
                 <input
@@ -190,17 +212,16 @@ export default function Admin({
                 />
 
                 <div>
-                <label className="control-text">Stacks</label>
-                <Selectoption
+                  <label className="control-text">Stacks</label>
+                  <Selectoption
                     label="stack"
                     name="stack"
                     value={users.stack as string}
                     handleChange={handleChange}
-                />
+                  />
+                </div>
 
-              </div>
-
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Squad
                 </label>
                 <input

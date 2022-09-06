@@ -1,4 +1,5 @@
 import { useState, Fragment } from "react";
+import { Selectoption } from "../Selectoption";
 import { CgClose } from "react-icons/cg";
 import Swal from "sweetalert2";
 import "./dev.management.css";
@@ -19,7 +20,6 @@ interface Prop {
     id: any,
     firstname: string,
     lastname: string,
-    phone: string,
     squad: string,
     stack: string
   ) => void;
@@ -30,7 +30,6 @@ interface Prop {
 const defaultFormField = {
   firstname: "",
   lastname: "",
-  phone: "",
   stack: "",
   squad: "",
 };
@@ -47,7 +46,7 @@ export default function Devs({
   const [isActive, setIsActive] = useState(false);
   const [updateCall, setUpdateCall] = useState(false);
   const [formData, setFormData] = useState(defaultFormField);
-  const { firstname, lastname, phone, stack, squad } = formData;
+  const { firstname, lastname, stack, squad } = formData;
   const [uid] = useState(users.id);
 
   const handleChange = (e: any) => {
@@ -112,7 +111,6 @@ export default function Devs({
       uid,
       formData.firstname,
       formData.lastname,
-      formData.phone,
       formData.squad,
       formData.stack
     );
@@ -187,7 +185,7 @@ export default function Devs({
               </div>
 
               <form onSubmit={(e) => onSubmit(e)}>
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Firstname
                 </label>
                 <input
@@ -198,7 +196,7 @@ export default function Devs({
                   value={firstname}
                 />
 
-                <label className="newpassword" htmlFor="">
+                <label className="control-text" htmlFor="">
                   Lastname
                 </label>
                 <input
@@ -209,29 +207,16 @@ export default function Devs({
                   value={lastname}
                 />
 
-                <label className="newpassword" htmlFor="">
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="+234-812-3456-789"
-                  onChange={(e) => handleChange(e)}
-                  value={phone}
-                />
-
-                <label className="newpassword" htmlFor="">
+                <label className="control-text stack" htmlFor="">
                   Stack
                 </label>
-                <input
-                  type="text"
-                  name="stack"
-                  placeholder={users.stack}
-                  onChange={(e) => handleChange(e)}
-                  value={stack}
-                />
-
-                <label className="newpassword" htmlFor="">
+                  <Selectoption
+                    label="stack"
+                    name="stack"
+                    value={stack}
+                    handleChange={handleChange}
+                  />
+                <label className="control-text" htmlFor="">
                   Squad
                 </label>
                 <input

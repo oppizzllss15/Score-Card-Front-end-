@@ -84,9 +84,11 @@
 }
 
 .form-header {
-   display: inline-block;
+   display: flex;
+   flex-direction: row;
    align-items: baseline;
-   text-align: right;
+   justify-content: space-between;
+   margin-bottom: 1rem;
 }
 
 /* .top-text {
@@ -118,6 +120,7 @@
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   padding-left: 10px;
+  margin-bottom: 1.5rem;
   font-size: 1rem;
   color: #2c3f5f;
   font-weight: 200;
@@ -141,7 +144,7 @@
   );
   color: white;
   font-weight: 500;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 20px;
   transition: all 0.2s;
 }
@@ -155,4 +158,8 @@
   color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: 2px;
+}
+
+.control-text .stack {
+ margin-bottom: 2px !important;
 }

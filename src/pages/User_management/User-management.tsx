@@ -140,7 +140,6 @@ const DecadevManagement = () => {
     id: string,
     firstname: string,
     lastname: string,
-    phone: string,
     squad: string,
     stack: string
   ) => {
@@ -148,7 +147,6 @@ const DecadevManagement = () => {
       id,
       firstname,
       lastname,
-      phone,
       squad,
       stack
     );

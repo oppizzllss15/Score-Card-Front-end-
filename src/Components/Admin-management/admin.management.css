@@ -55,6 +55,15 @@
     background: #f4f4f4;
 }
 
+.dropdown-item-btn {
+   border: none;
+   background: #fff;
+   padding: 0.5rem 4rem 0.3rem 0.4rem;
+   font-size: 1rem;
+   font-weight: 300;
+   transition: all 0.2s;
+ }
+
 .from {
    width: 50%;
     position: absolute;

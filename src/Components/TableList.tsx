@@ -94,7 +94,7 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
           algorithm,
           assessment,
           weekly_task
-        ).then((res) => { 
+        ).then((res) => {
           if (res.message && res.message.match(/updated successfully/gi)) {
             setTimeout(() => {
               Swal.fire({
@@ -120,10 +120,10 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
               });
             }, 100);
           }
-        })
+        });
         setFormData(defaultFormField);
         setUpdateCall(false);
-        check(Number(week))
+        check(Number(week));
       } else if (result.isDenied) {
         Swal.fire({
           icon: "info",
@@ -155,8 +155,8 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
           algorithm,
           assessment,
           weekly_task
-        ).then((res) => { 
-          console.log(res)
+        ).then((res) => {
+          console.log(res);
           if (res.message && res.message.match(/updated successfully/gi)) {
             setTimeout(() => {
               Swal.fire({
@@ -182,10 +182,10 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
               });
             }, 100);
           }
-        })
+        });
         setFormData(defaultFormField);
         setAddCall(false);
-        check(Number(week))
+        check(Number(week));
       } else if (result.isDenied) {
         Swal.fire({
           icon: "info",
@@ -241,6 +241,9 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
             {updateCall && (
               <div className="form-update">
                 <div className="form-header">
+                  <p className="control-text">
+                    {user.firstname} {user.lastname} performance
+                  </p>
                   <button onClick={handleEdit} className="top-text-btn">
                     <CgClose />
                   </button>
@@ -320,6 +323,9 @@ const TableList = ({ user, ind, setActive, selectedItem, check }: Prop) => {
             {addCall && (
               <div className="form-update">
                 <div className="form-header">
+                  <p className="control-text">
+                    {user.firstname} {user.lastname} performance
+                  </p>
                   <button onClick={handleAddScore} className="top-text-btn">
                     <CgClose />
                   </button>
