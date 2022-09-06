@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { filterDevsPerformanceByWeek } from "../../utils/api";
 import { AiOutlineCalendar } from "react-icons/ai";
-import TableList from "../../components/TableList";
+// import TableList from "../../components/TableList";
 import { DashboardLayout } from "../../layout/DashboardLayout/DashboardLayout";
 import "./devsweeklyperformance.css";
 
@@ -101,7 +101,7 @@ const DevsWeeklyPerformance: ()=> JSX.Element = () => {
                     </tr>
                   </thead>
                   <tbody className="tb-text">
-                    {list.map((user: Devs, ind) => (
+                    {/* {list.map((user: Devs, ind) => (
                       <TableList
                         key={user.id}
                         user={user}
@@ -110,7 +110,7 @@ const DevsWeeklyPerformance: ()=> JSX.Element = () => {
                         selectedItem={item}
                         check={handleEffect}
                       />
-                    ))}
+                    ))} */}
                   </tbody>
                 </table>
               </div>

@@ -1,9 +1,10 @@
-import { useState } from "react";
+
 import { addEditScore } from "../utils/api";
 import { CgClose } from "react-icons/cg";
 import Swal from "sweetalert2";
 import "./component.css";
 import "./Dev-management/dev.management.css";
+import { useState } from "react";
 
 interface Prop {
   user: {
